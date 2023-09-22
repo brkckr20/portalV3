@@ -1,6 +1,6 @@
 ﻿namespace PortalV3._1.Depolar.MalzemeDepo
 {
-    partial class MalzemeDepoGiris
+    partial class MalzemeDepoCikis
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MalzemeDepoGiris));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MalzemeDepoCikis));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -36,15 +36,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnKapat = new System.Windows.Forms.Button();
             this.btnMalzemeDepoSil = new System.Windows.Forms.Button();
-            this.btnFirmaKartiKaydet = new System.Windows.Forms.Button();
-            this.btnFirmaKartiYeni = new System.Windows.Forms.Button();
+            this.btnMalzemeDepoCikisKaydet = new System.Windows.Forms.Button();
+            this.btnMalzemeDepoCikisYeni = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblKayitNo = new System.Windows.Forms.Label();
-            this.txtBelgeNo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtFirmaUnvan = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblFirmaUnvanText = new System.Windows.Forms.Label();
             this.txtFirmaKodu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,27 +50,30 @@
             this.txtIslemCinsi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.malzemeGirisKalemler = new System.Windows.Forms.DataGridView();
+            this.tblMalzemeCikis = new System.Windows.Forms.DataGridView();
             this.KALEM_ISLEM = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.MALZEME_KODU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MALZEME_ADI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MIKTAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BIRIM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MALZEME_MARKA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIKILAN_BIRIM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TESLIM_ALAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ACIKLAMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataSet11 = new PortalV3._1.DataSet1();
-            this.button6 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tblMalzemeDepoDurum = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.malzemeGirisKalemler)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMalzemeCikis)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMalzemeDepoDurum)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,14 +84,14 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnKapat);
             this.panel1.Controls.Add(this.btnMalzemeDepoSil);
-            this.panel1.Controls.Add(this.btnFirmaKartiKaydet);
-            this.panel1.Controls.Add(this.btnFirmaKartiYeni);
+            this.panel1.Controls.Add(this.btnMalzemeDepoCikisKaydet);
+            this.panel1.Controls.Add(this.btnMalzemeDepoCikisYeni);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1118, 64);
-            this.panel1.TabIndex = 2;
+            this.panel1.Size = new System.Drawing.Size(1255, 64);
+            this.panel1.TabIndex = 3;
             // 
             // button5
             // 
@@ -134,7 +135,6 @@
             this.button2.Text = "İleri";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -149,7 +149,6 @@
             this.button1.Text = "Geri";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnKapat
             // 
@@ -178,47 +177,43 @@
             this.btnMalzemeDepoSil.Text = "Sil";
             this.btnMalzemeDepoSil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMalzemeDepoSil.UseVisualStyleBackColor = true;
-            this.btnMalzemeDepoSil.Click += new System.EventHandler(this.btmFirmaKartiSil_Click);
             // 
-            // btnFirmaKartiKaydet
+            // btnMalzemeDepoCikisKaydet
             // 
-            this.btnFirmaKartiKaydet.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnFirmaKartiKaydet.Image = ((System.Drawing.Image)(resources.GetObject("btnFirmaKartiKaydet.Image")));
-            this.btnFirmaKartiKaydet.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFirmaKartiKaydet.Location = new System.Drawing.Point(89, 6);
-            this.btnFirmaKartiKaydet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnFirmaKartiKaydet.Name = "btnFirmaKartiKaydet";
-            this.btnFirmaKartiKaydet.Size = new System.Drawing.Size(78, 52);
-            this.btnFirmaKartiKaydet.TabIndex = 1;
-            this.btnFirmaKartiKaydet.Text = "Kaydet";
-            this.btnFirmaKartiKaydet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFirmaKartiKaydet.UseVisualStyleBackColor = true;
-            this.btnFirmaKartiKaydet.Click += new System.EventHandler(this.btnFirmaKartiKaydet_Click);
+            this.btnMalzemeDepoCikisKaydet.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMalzemeDepoCikisKaydet.Image = ((System.Drawing.Image)(resources.GetObject("btnMalzemeDepoCikisKaydet.Image")));
+            this.btnMalzemeDepoCikisKaydet.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMalzemeDepoCikisKaydet.Location = new System.Drawing.Point(89, 6);
+            this.btnMalzemeDepoCikisKaydet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMalzemeDepoCikisKaydet.Name = "btnMalzemeDepoCikisKaydet";
+            this.btnMalzemeDepoCikisKaydet.Size = new System.Drawing.Size(78, 52);
+            this.btnMalzemeDepoCikisKaydet.TabIndex = 1;
+            this.btnMalzemeDepoCikisKaydet.Text = "Kaydet";
+            this.btnMalzemeDepoCikisKaydet.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMalzemeDepoCikisKaydet.UseVisualStyleBackColor = true;
+            this.btnMalzemeDepoCikisKaydet.Click += new System.EventHandler(this.btnMalzemeDepoCikisKaydet_Click);
             // 
-            // btnFirmaKartiYeni
+            // btnMalzemeDepoCikisYeni
             // 
-            this.btnFirmaKartiYeni.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnFirmaKartiYeni.Image = ((System.Drawing.Image)(resources.GetObject("btnFirmaKartiYeni.Image")));
-            this.btnFirmaKartiYeni.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFirmaKartiYeni.Location = new System.Drawing.Point(5, 6);
-            this.btnFirmaKartiYeni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnFirmaKartiYeni.Name = "btnFirmaKartiYeni";
-            this.btnFirmaKartiYeni.Size = new System.Drawing.Size(78, 52);
-            this.btnFirmaKartiYeni.TabIndex = 0;
-            this.btnFirmaKartiYeni.Text = "Yeni";
-            this.btnFirmaKartiYeni.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFirmaKartiYeni.UseVisualStyleBackColor = true;
-            this.btnFirmaKartiYeni.Click += new System.EventHandler(this.btnFirmaKartiYeni_Click);
+            this.btnMalzemeDepoCikisYeni.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMalzemeDepoCikisYeni.Image = ((System.Drawing.Image)(resources.GetObject("btnMalzemeDepoCikisYeni.Image")));
+            this.btnMalzemeDepoCikisYeni.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMalzemeDepoCikisYeni.Location = new System.Drawing.Point(5, 6);
+            this.btnMalzemeDepoCikisYeni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMalzemeDepoCikisYeni.Name = "btnMalzemeDepoCikisYeni";
+            this.btnMalzemeDepoCikisYeni.Size = new System.Drawing.Size(78, 52);
+            this.btnMalzemeDepoCikisYeni.TabIndex = 0;
+            this.btnMalzemeDepoCikisYeni.Text = "Yeni";
+            this.btnMalzemeDepoCikisYeni.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMalzemeDepoCikisYeni.UseVisualStyleBackColor = true;
+            this.btnMalzemeDepoCikisYeni.Click += new System.EventHandler(this.btnMalzemeDepoCikisYeni_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.lblKayitNo);
-            this.groupBox1.Controls.Add(this.txtBelgeNo);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtFirmaUnvan);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblFirmaUnvanText);
             this.groupBox1.Controls.Add(this.txtFirmaKodu);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -228,10 +223,20 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1118, 157);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.Size = new System.Drawing.Size(1255, 108);
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fiş";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(341, 75);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(37, 20);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Seç";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label6
             // 
@@ -251,38 +256,13 @@
             this.lblKayitNo.TabIndex = 10;
             this.lblKayitNo.Text = "0";
             // 
-            // txtBelgeNo
+            // lblFirmaUnvanText
             // 
-            this.txtBelgeNo.Location = new System.Drawing.Point(137, 128);
-            this.txtBelgeNo.Name = "txtBelgeNo";
-            this.txtBelgeNo.Size = new System.Drawing.Size(198, 20);
-            this.txtBelgeNo.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 131);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Belge No :";
-            // 
-            // txtFirmaUnvan
-            // 
-            this.txtFirmaUnvan.Enabled = false;
-            this.txtFirmaUnvan.Location = new System.Drawing.Point(137, 102);
-            this.txtFirmaUnvan.Name = "txtFirmaUnvan";
-            this.txtFirmaUnvan.Size = new System.Drawing.Size(198, 20);
-            this.txtFirmaUnvan.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Firma Ünvan :";
+            this.lblFirmaUnvanText.AutoSize = true;
+            this.lblFirmaUnvanText.Location = new System.Drawing.Point(384, 79);
+            this.lblFirmaUnvanText.Name = "lblFirmaUnvanText";
+            this.lblFirmaUnvanText.Size = new System.Drawing.Size(0, 13);
+            this.lblFirmaUnvanText.TabIndex = 6;
             // 
             // txtFirmaKodu
             // 
@@ -304,7 +284,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 56);
+            this.label2.Location = new System.Drawing.Point(12, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 3;
@@ -325,7 +305,7 @@
             this.txtIslemCinsi.Name = "txtIslemCinsi";
             this.txtIslemCinsi.Size = new System.Drawing.Size(198, 20);
             this.txtIslemCinsi.TabIndex = 1;
-            this.txtIslemCinsi.Text = "SARF_MALZEME_GIRIS";
+            this.txtIslemCinsi.Text = "SARF_MALZEME_CIKIS";
             // 
             // label1
             // 
@@ -338,53 +318,45 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.panel3);
-            this.groupBox2.Controls.Add(this.panel2);
+            this.groupBox2.Controls.Add(this.tblMalzemeCikis);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 221);
+            this.groupBox2.Location = new System.Drawing.Point(0, 172);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1118, 287);
-            this.groupBox2.TabIndex = 4;
+            this.groupBox2.Size = new System.Drawing.Size(1255, 194);
+            this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Kalemler";
+            this.groupBox2.Text = "Kalem";
             // 
-            // panel3
+            // tblMalzemeCikis
             // 
-            this.panel3.Controls.Add(this.malzemeGirisKalemler);
-            this.panel3.Location = new System.Drawing.Point(52, 19);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1066, 262);
-            this.panel3.TabIndex = 1;
-            // 
-            // malzemeGirisKalemler
-            // 
-            this.malzemeGirisKalemler.AllowUserToOrderColumns = true;
-            this.malzemeGirisKalemler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.malzemeGirisKalemler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblMalzemeCikis.BackgroundColor = System.Drawing.Color.White;
+            this.tblMalzemeCikis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblMalzemeCikis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.KALEM_ISLEM,
             this.MALZEME_KODU,
             this.MALZEME_ADI,
             this.MIKTAR,
             this.BIRIM,
-            this.MALZEME_MARKA,
-            this.UUID,
-            this.ACIKLAMA});
-            this.malzemeGirisKalemler.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.malzemeGirisKalemler.Location = new System.Drawing.Point(0, 0);
-            this.malzemeGirisKalemler.Name = "malzemeGirisKalemler";
-            this.malzemeGirisKalemler.Size = new System.Drawing.Size(1066, 262);
-            this.malzemeGirisKalemler.TabIndex = 0;
-            this.malzemeGirisKalemler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.malzemeGirisKalemler_CellClick);
+            this.NOT1,
+            this.NOT2,
+            this.CIKILAN_BIRIM,
+            this.TESLIM_ALAN,
+            this.UUID});
+            this.tblMalzemeCikis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblMalzemeCikis.Location = new System.Drawing.Point(3, 16);
+            this.tblMalzemeCikis.Name = "tblMalzemeCikis";
+            this.tblMalzemeCikis.Size = new System.Drawing.Size(1249, 175);
+            this.tblMalzemeCikis.TabIndex = 0;
             // 
             // KALEM_ISLEM
             // 
             this.KALEM_ISLEM.HeaderText = "Kalem İşlem";
             this.KALEM_ISLEM.Items.AddRange(new object[] {
-            "SATIN ALMA",
-            "TAMİR GİRİŞ",
-            "DOLUM GİRİŞ",
-            "STOK GİRİŞ",
-            "TEKNİK DESTEK"});
+            "KURUMA ÇIKIŞ",
+            "DOLUMA ÇIKIŞ",
+            "TAMİRE ÇIKIŞ",
+            "STOK DÜZELTME",
+            "DEMİRBAŞ ÇIKIŞ"});
             this.KALEM_ISLEM.Name = "KALEM_ISLEM";
             this.KALEM_ISLEM.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.KALEM_ISLEM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -409,73 +381,107 @@
             this.BIRIM.HeaderText = "Birim";
             this.BIRIM.Name = "BIRIM";
             // 
-            // MALZEME_MARKA
+            // NOT1
             // 
-            this.MALZEME_MARKA.HeaderText = "Malzeme Marka";
-            this.MALZEME_MARKA.Name = "MALZEME_MARKA";
-            this.MALZEME_MARKA.Width = 200;
+            this.NOT1.HeaderText = "Not 1";
+            this.NOT1.Name = "NOT1";
+            // 
+            // NOT2
+            // 
+            this.NOT2.HeaderText = "Not 2";
+            this.NOT2.Name = "NOT2";
+            // 
+            // CIKILAN_BIRIM
+            // 
+            this.CIKILAN_BIRIM.HeaderText = "Çıkılan Birim";
+            this.CIKILAN_BIRIM.Name = "CIKILAN_BIRIM";
+            // 
+            // TESLIM_ALAN
+            // 
+            this.TESLIM_ALAN.HeaderText = "Teslim Alan";
+            this.TESLIM_ALAN.Name = "TESLIM_ALAN";
             // 
             // UUID
             // 
             this.UUID.HeaderText = "Uuid";
             this.UUID.Name = "UUID";
             // 
-            // ACIKLAMA
+            // groupBox3
             // 
-            this.ACIKLAMA.HeaderText = "Açıklama";
-            this.ACIKLAMA.Name = "ACIKLAMA";
+            this.groupBox3.Controls.Add(this.tabControl1);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 366);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1255, 221);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Havuz";
             // 
-            // panel2
+            // tabControl1
             // 
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Location = new System.Drawing.Point(12, 19);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(37, 262);
-            this.panel2.TabIndex = 0;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(3, 16);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1249, 202);
+            this.tabControl1.TabIndex = 0;
             // 
-            // button4
+            // tabPage1
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(3, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 25);
-            this.button4.TabIndex = 1;
-            this.button4.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.tblMalzemeDepoDurum);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1241, 176);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Malzeme Depo Durum";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataSet11
+            // tblMalzemeDepoDurum
             // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tblMalzemeDepoDurum.BackgroundColor = System.Drawing.Color.White;
+            this.tblMalzemeDepoDurum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblMalzemeDepoDurum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblMalzemeDepoDurum.Location = new System.Drawing.Point(3, 3);
+            this.tblMalzemeDepoDurum.Name = "tblMalzemeDepoDurum";
+            this.tblMalzemeDepoDurum.Size = new System.Drawing.Size(1235, 170);
+            this.tblMalzemeDepoDurum.TabIndex = 0;
+            this.tblMalzemeDepoDurum.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblMalzemeDepoDurum_CellContentClick);
+            this.tblMalzemeDepoDurum.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblMalzemeDepoDurum_CellDoubleClick);
             // 
-            // button6
+            // tabPage2
             // 
-            this.button6.Location = new System.Drawing.Point(341, 76);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(37, 20);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Seç";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1241, 176);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Malzeme Kartı Listesi";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // MalzemeDepoGiris
+            // MalzemeDepoCikis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 592);
+            this.ClientSize = new System.Drawing.Size(1255, 587);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Name = "MalzemeDepoGiris";
-            this.Text = "MalzemeDepoGiris";
-            this.Load += new System.EventHandler(this.MalzemeDepoGiris_Load);
+            this.Name = "MalzemeDepoCikis";
+            this.Text = "MalzemeDepoCikis";
+            this.Load += new System.EventHandler(this.MalzemeDepoCikis_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.malzemeGirisKalemler)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMalzemeCikis)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tblMalzemeDepoDurum)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,41 +489,41 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.Button btnMalzemeDepoSil;
-        private System.Windows.Forms.Button btnFirmaKartiKaydet;
-        private System.Windows.Forms.Button btnFirmaKartiYeni;
+        private System.Windows.Forms.Button btnMalzemeDepoCikisKaydet;
+        private System.Windows.Forms.Button btnMalzemeDepoCikisYeni;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtBelgeNo;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtFirmaUnvan;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblKayitNo;
+        private System.Windows.Forms.Label lblFirmaUnvanText;
         private System.Windows.Forms.TextBox txtFirmaKodu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpTarih;
         private System.Windows.Forms.TextBox txtIslemCinsi;
         private System.Windows.Forms.Label label1;
-        private DataSet1 dataSet11;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView malzemeGirisKalemler;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView tblMalzemeCikis;
+        private System.Windows.Forms.DataGridView tblMalzemeDepoDurum;
         private System.Windows.Forms.DataGridViewComboBoxColumn KALEM_ISLEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn MALZEME_KODU;
         private System.Windows.Forms.DataGridViewTextBoxColumn MALZEME_ADI;
         private System.Windows.Forms.DataGridViewTextBoxColumn MIKTAR;
         private System.Windows.Forms.DataGridViewTextBoxColumn BIRIM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MALZEME_MARKA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOT1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOT2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIKILAN_BIRIM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TESLIM_ALAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn UUID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ACIKLAMA;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblKayitNo;
-        private System.Windows.Forms.Button button6;
     }
 }

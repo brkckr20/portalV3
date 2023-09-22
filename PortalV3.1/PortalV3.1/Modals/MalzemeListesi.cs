@@ -47,5 +47,12 @@ namespace PortalV3._1.Modals
                 this.Close(); // Modal pencereyi kapatın
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           // string aramaIfadesi = textBox1.Text; // Arama yapılacak metin kutusundan arama ifadesini alın
+           // BindingSource kaynak = (BindingSource)tblMalzemeListesi.DataSource; // DataGridView'ın veri kaynağını alın (BindingSource olarak varsayıyoruz)
+           // kaynak.Filter = string.Format("Convert({0}, 'System.String') LIKE '%{1}%'", tblMalzemeListesi.Columns["SutunAdi"].DataPropertyName, aramaIfadesi);
+        }
     }
 }

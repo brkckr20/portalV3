@@ -11,3 +11,5 @@ E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Kartl
 E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Kartlar.FirmaKarti.resources
 E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Depolar.MalzemeDepo.MalzemeDepoGiris.resources
 E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Modals.MalzemeListesi.resources
+E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Depolar.MalzemeDepo.MalzemeDepoCikis.resources
+E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Modals.FirmaListesi.resources

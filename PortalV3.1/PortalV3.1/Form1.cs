@@ -54,5 +54,11 @@ namespace PortalV3._1
             Depolar.MalzemeDepo.MalzemeDepoGiris mg = new Depolar.MalzemeDepo.MalzemeDepoGiris();
             tabOlustur("Malzeme Depo Giriş", mg);
         }
+
+        private void malzemeDepoÇıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Depolar.MalzemeDepo.MalzemeDepoCikis mk = new Depolar.MalzemeDepo.MalzemeDepoCikis();
+            tabOlustur("Malzeme Depo Çıkış", mk);
+        }
     }
 }

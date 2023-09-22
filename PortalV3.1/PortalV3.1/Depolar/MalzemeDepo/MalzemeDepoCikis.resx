@@ -212,7 +212,7 @@
         3Zv7Qlkce8b/Rir1C3P/SyPOxsGiAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnFirmaKartiKaydet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMalzemeDepoCikisKaydet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAA1ZJREFUWEft
         lUtPE1EYhvkX3rnJHbn5O1SWanThH/AfkGhI0J07V2pAwAsiFgXkjiAiiS6MpbWtpUNb5tKZ6UxbQISw
@@ -232,7 +232,7 @@
         dVRWlZT8AsqRCS8/Pv8pAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnFirmaKartiYeni.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMalzemeDepoCikisYeni.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAATdJREFUWEft
         l78ug2Echb9LsLkAI4rEnzA1oXTkJlxE3YNIpPdg1EUkBiKdhAlLIzpp0mhCpebXr8lh4ORzON/QoU/y
@@ -258,53 +258,19 @@
   <metadata name="BIRIM.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="MALZEME_MARKA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="NOT1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NOT2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CIKILAN_BIRIM.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TESLIM_ALAN.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="UUID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="ACIKLAMA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="KALEM_ISLEM.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MALZEME_KODU.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MALZEME_ADI.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MIKTAR.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="BIRIM.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MALZEME_MARKA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="UUID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ACIKLAMA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAZ9JREFUOE9j
-        oAmY9f+8wYy/J/Kn/Dw6v//7ofk9X/bnt37ZZQCVxg3m/z8vMOfv2fnT/5z8P/nnsf9Azf+7v+z/3/5p
-        9//m9zv+17/dMr/h/XoBqHJUANI8+9+Z83g0/69+tfF/+Yt15wvuYzFk9t9zC9A1u88p+O86Kw+uuezF
-        uv9Fz1b9z3u0fAFUGwSA/IzNZu2qwP9alf6omh8v/5/1cPH/jPvzFaDaGRim/T1RgM3ZWlUB/zUr/EHO
-        RtGcdm/B/6S7cwug2hkYgJoXIDtbuzoQjCVTbP5LALFGpd9/9Qq//xYTEiGa78z5H3drxgSodgYGoOYF
-        MJtdZ+dBbAY6HaRZItnmv1qF73+1cp//5v2JEM03Z/6PujYVYQBQcwF6aIP8rA60Wa3MB+FsmObrU/+H
-        X5mE8AIokaBFFdjPYJuBBqBrDrsy6X/A+X5EIIJAw9stC9BD23JKyn+LSckYmgMv9aFGIwiAUhhQ8wWM
-        0EbTHHSp7wLQduypEZTCQIkEl2aQzTg1IwNQIgHFM1DzgsjrUxaAAgzDz9QBDAwABLi8JoZiI7kAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <metadata name="dataSet11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
 </root>

@@ -1,6 +1,6 @@
 ﻿namespace PortalV3._1.Modals
 {
-    partial class MalzemeListesi
+    partial class FirmaListesi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,31 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAramaIfadesi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tblMalzemeListesi = new System.Windows.Forms.DataGridView();
+            this.tblFirmaListesi = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblMalzemeListesi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblFirmaListesi)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtAramaIfadesi);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(454, 31);
+            this.panel1.Size = new System.Drawing.Size(501, 31);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // txtAramaIfadesi
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(352, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtAramaIfadesi.Location = new System.Drawing.Point(95, 6);
+            this.txtAramaIfadesi.Name = "txtAramaIfadesi";
+            this.txtAramaIfadesi.Size = new System.Drawing.Size(394, 20);
+            this.txtAramaIfadesi.TabIndex = 1;
             // 
             // label1
             // 
@@ -67,39 +66,41 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tblMalzemeListesi);
+            this.panel2.Controls.Add(this.tblFirmaListesi);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 31);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(454, 358);
+            this.panel2.Size = new System.Drawing.Size(501, 217);
             this.panel2.TabIndex = 1;
             // 
-            // tblMalzemeListesi
+            // tblFirmaListesi
             // 
-            this.tblMalzemeListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblMalzemeListesi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblMalzemeListesi.Location = new System.Drawing.Point(0, 0);
-            this.tblMalzemeListesi.Name = "tblMalzemeListesi";
-            this.tblMalzemeListesi.Size = new System.Drawing.Size(454, 358);
-            this.tblMalzemeListesi.TabIndex = 0;
-            this.tblMalzemeListesi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblMalzemeListesi_CellClick);
-            this.tblMalzemeListesi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblMalzemeListesi_CellDoubleClick);
+            this.tblFirmaListesi.BackgroundColor = System.Drawing.Color.White;
+            this.tblFirmaListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblFirmaListesi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblFirmaListesi.Location = new System.Drawing.Point(0, 0);
+            this.tblFirmaListesi.Name = "tblFirmaListesi";
+            this.tblFirmaListesi.Size = new System.Drawing.Size(501, 217);
+            this.tblFirmaListesi.TabIndex = 0;
+            this.tblFirmaListesi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblFirmaListesi_CellDoubleClick);
             // 
-            // MalzemeListesi
+            // FirmaListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 389);
+            this.ClientSize = new System.Drawing.Size(501, 248);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "MalzemeListesi";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FirmaListesi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Malzeme Listesi";
-            this.Load += new System.EventHandler(this.MalzemeListesi_Load);
+            this.Text = "Firma Listesi";
+            this.Load += new System.EventHandler(this.FirmaListesi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblMalzemeListesi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblFirmaListesi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -107,9 +108,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAramaIfadesi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView tblMalzemeListesi;
+        private System.Windows.Forms.DataGridView tblFirmaListesi;
     }
 }

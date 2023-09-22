@@ -32,6 +32,8 @@ namespace PortalV3._1 {
         
         private MalzemeDepoKayitGetirDataTable tableMalzemeDepoKayitGetir;
         
+        private MalzemeDepoStokDurumDataTable tableMalzemeDepoStokDurum;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -71,6 +73,9 @@ namespace PortalV3._1 {
                 }
                 if ((ds.Tables["MalzemeDepoKayitGetir"] != null)) {
                     base.Tables.Add(new MalzemeDepoKayitGetirDataTable(ds.Tables["MalzemeDepoKayitGetir"]));
+                }
+                if ((ds.Tables["MalzemeDepoStokDurum"] != null)) {
+                    base.Tables.Add(new MalzemeDepoStokDurumDataTable(ds.Tables["MalzemeDepoStokDurum"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -127,6 +132,16 @@ namespace PortalV3._1 {
         public MalzemeDepoKayitGetirDataTable MalzemeDepoKayitGetir {
             get {
                 return this.tableMalzemeDepoKayitGetir;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public MalzemeDepoStokDurumDataTable MalzemeDepoStokDurum {
+            get {
+                return this.tableMalzemeDepoStokDurum;
             }
         }
         
@@ -209,6 +224,9 @@ namespace PortalV3._1 {
                 if ((ds.Tables["MalzemeDepoKayitGetir"] != null)) {
                     base.Tables.Add(new MalzemeDepoKayitGetirDataTable(ds.Tables["MalzemeDepoKayitGetir"]));
                 }
+                if ((ds.Tables["MalzemeDepoStokDurum"] != null)) {
+                    base.Tables.Add(new MalzemeDepoStokDurumDataTable(ds.Tables["MalzemeDepoStokDurum"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -266,6 +284,12 @@ namespace PortalV3._1 {
                     this.tableMalzemeDepoKayitGetir.InitVars();
                 }
             }
+            this.tableMalzemeDepoStokDurum = ((MalzemeDepoStokDurumDataTable)(base.Tables["MalzemeDepoStokDurum"]));
+            if ((initTable == true)) {
+                if ((this.tableMalzemeDepoStokDurum != null)) {
+                    this.tableMalzemeDepoStokDurum.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -284,6 +308,8 @@ namespace PortalV3._1 {
             base.Tables.Add(this.tableMalzemeDepo1);
             this.tableMalzemeDepoKayitGetir = new MalzemeDepoKayitGetirDataTable();
             base.Tables.Add(this.tableMalzemeDepoKayitGetir);
+            this.tableMalzemeDepoStokDurum = new MalzemeDepoStokDurumDataTable();
+            base.Tables.Add(this.tableMalzemeDepoStokDurum);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -307,6 +333,12 @@ namespace PortalV3._1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeMalzemeDepoKayitGetir() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeMalzemeDepoStokDurum() {
             return false;
         }
         
@@ -376,6 +408,9 @@ namespace PortalV3._1 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void MalzemeDepoKayitGetirRowChangeEventHandler(object sender, MalzemeDepoKayitGetirRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void MalzemeDepoStokDurumRowChangeEventHandler(object sender, MalzemeDepoStokDurumRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1310,8 +1345,6 @@ namespace PortalV3._1 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class MalzemeDepoKayitGetirDataTable : global::System.Data.TypedTableBase<MalzemeDepoKayitGetirRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn columnTARIH;
             
             private global::System.Data.DataColumn columnFIRMA_KODU;
@@ -1331,6 +1364,8 @@ namespace PortalV3._1 {
             private global::System.Data.DataColumn columnBIRIM;
             
             private global::System.Data.DataColumn columnUUID;
+            
+            private global::System.Data.DataColumn columnREF_NO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1363,14 +1398,6 @@ namespace PortalV3._1 {
             protected MalzemeDepoKayitGetirDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1455,6 +1482,14 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn REF_NOColumn {
+                get {
+                    return this.columnREF_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1490,10 +1525,9 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MalzemeDepoKayitGetirRow AddMalzemeDepoKayitGetirRow(System.DateTime TARIH, string FIRMA_KODU, string FIRMA_UNVAN, string BELGE_NO, string KALEM_ISLEM, string MALZEME_KODU, string MALZEME_ADI, int MIKTAR, string BIRIM, string UUID) {
+            public MalzemeDepoKayitGetirRow AddMalzemeDepoKayitGetirRow(System.DateTime TARIH, string FIRMA_KODU, string FIRMA_UNVAN, string BELGE_NO, string KALEM_ISLEM, string MALZEME_KODU, string MALZEME_ADI, int MIKTAR, string BIRIM, string UUID, int REF_NO) {
                 MalzemeDepoKayitGetirRow rowMalzemeDepoKayitGetirRow = ((MalzemeDepoKayitGetirRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         TARIH,
                         FIRMA_KODU,
                         FIRMA_UNVAN,
@@ -1503,17 +1537,11 @@ namespace PortalV3._1 {
                         MALZEME_ADI,
                         MIKTAR,
                         BIRIM,
-                        UUID};
+                        UUID,
+                        REF_NO};
                 rowMalzemeDepoKayitGetirRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMalzemeDepoKayitGetirRow);
                 return rowMalzemeDepoKayitGetirRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MalzemeDepoKayitGetirRow FindByID(int ID) {
-                return ((MalzemeDepoKayitGetirRow)(this.Rows.Find(new object[] {
-                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1533,7 +1561,6 @@ namespace PortalV3._1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this.columnTARIH = base.Columns["TARIH"];
                 this.columnFIRMA_KODU = base.Columns["FIRMA_KODU"];
                 this.columnFIRMA_UNVAN = base.Columns["FIRMA_UNVAN"];
@@ -1544,13 +1571,12 @@ namespace PortalV3._1 {
                 this.columnMIKTAR = base.Columns["MIKTAR"];
                 this.columnBIRIM = base.Columns["BIRIM"];
                 this.columnUUID = base.Columns["UUID"];
+                this.columnREF_NO = base.Columns["REF_NO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this.columnTARIH = new global::System.Data.DataColumn("TARIH", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTARIH);
                 this.columnFIRMA_KODU = new global::System.Data.DataColumn("FIRMA_KODU", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1571,14 +1597,8 @@ namespace PortalV3._1 {
                 base.Columns.Add(this.columnBIRIM);
                 this.columnUUID = new global::System.Data.DataColumn("UUID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUUID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
+                this.columnREF_NO = new global::System.Data.DataColumn("REF_NO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnREF_NO);
                 this.columnFIRMA_KODU.MaxLength = 15;
                 this.columnFIRMA_UNVAN.MaxLength = 50;
                 this.columnBELGE_NO.MaxLength = 50;
@@ -1673,6 +1693,314 @@ namespace PortalV3._1 {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "MalzemeDepoKayitGetirDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class MalzemeDepoStokDurumDataTable : global::System.Data.TypedTableBase<MalzemeDepoStokDurumRow> {
+            
+            private global::System.Data.DataColumn columnMALZEME_KODU;
+            
+            private global::System.Data.DataColumn columnMALZEME_ADI;
+            
+            private global::System.Data.DataColumn columnMIKTAR;
+            
+            private global::System.Data.DataColumn columnBIRIM;
+            
+            private global::System.Data.DataColumn columnUUID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MalzemeDepoStokDurumDataTable() {
+                this.TableName = "MalzemeDepoStokDurum";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MalzemeDepoStokDurumDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected MalzemeDepoStokDurumDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MALZEME_KODUColumn {
+                get {
+                    return this.columnMALZEME_KODU;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MALZEME_ADIColumn {
+                get {
+                    return this.columnMALZEME_ADI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MIKTARColumn {
+                get {
+                    return this.columnMIKTAR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BIRIMColumn {
+                get {
+                    return this.columnBIRIM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UUIDColumn {
+                get {
+                    return this.columnUUID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MalzemeDepoStokDurumRow this[int index] {
+                get {
+                    return ((MalzemeDepoStokDurumRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MalzemeDepoStokDurumRowChangeEventHandler MalzemeDepoStokDurumRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MalzemeDepoStokDurumRowChangeEventHandler MalzemeDepoStokDurumRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MalzemeDepoStokDurumRowChangeEventHandler MalzemeDepoStokDurumRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MalzemeDepoStokDurumRowChangeEventHandler MalzemeDepoStokDurumRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddMalzemeDepoStokDurumRow(MalzemeDepoStokDurumRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MalzemeDepoStokDurumRow AddMalzemeDepoStokDurumRow(string MALZEME_KODU, string MALZEME_ADI, int MIKTAR, string BIRIM, string UUID) {
+                MalzemeDepoStokDurumRow rowMalzemeDepoStokDurumRow = ((MalzemeDepoStokDurumRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        MALZEME_KODU,
+                        MALZEME_ADI,
+                        MIKTAR,
+                        BIRIM,
+                        UUID};
+                rowMalzemeDepoStokDurumRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMalzemeDepoStokDurumRow);
+                return rowMalzemeDepoStokDurumRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                MalzemeDepoStokDurumDataTable cln = ((MalzemeDepoStokDurumDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new MalzemeDepoStokDurumDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnMALZEME_KODU = base.Columns["MALZEME_KODU"];
+                this.columnMALZEME_ADI = base.Columns["MALZEME_ADI"];
+                this.columnMIKTAR = base.Columns["MIKTAR"];
+                this.columnBIRIM = base.Columns["BIRIM"];
+                this.columnUUID = base.Columns["UUID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnMALZEME_KODU = new global::System.Data.DataColumn("MALZEME_KODU", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMALZEME_KODU);
+                this.columnMALZEME_ADI = new global::System.Data.DataColumn("MALZEME_ADI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMALZEME_ADI);
+                this.columnMIKTAR = new global::System.Data.DataColumn("MIKTAR", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMIKTAR);
+                this.columnBIRIM = new global::System.Data.DataColumn("BIRIM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBIRIM);
+                this.columnUUID = new global::System.Data.DataColumn("UUID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUUID);
+                this.columnMALZEME_KODU.MaxLength = 50;
+                this.columnMALZEME_ADI.MaxLength = 50;
+                this.columnMIKTAR.ReadOnly = true;
+                this.columnBIRIM.MaxLength = 10;
+                this.columnUUID.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MalzemeDepoStokDurumRow NewMalzemeDepoStokDurumRow() {
+                return ((MalzemeDepoStokDurumRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new MalzemeDepoStokDurumRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(MalzemeDepoStokDurumRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.MalzemeDepoStokDurumRowChanged != null)) {
+                    this.MalzemeDepoStokDurumRowChanged(this, new MalzemeDepoStokDurumRowChangeEvent(((MalzemeDepoStokDurumRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.MalzemeDepoStokDurumRowChanging != null)) {
+                    this.MalzemeDepoStokDurumRowChanging(this, new MalzemeDepoStokDurumRowChangeEvent(((MalzemeDepoStokDurumRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.MalzemeDepoStokDurumRowDeleted != null)) {
+                    this.MalzemeDepoStokDurumRowDeleted(this, new MalzemeDepoStokDurumRowChangeEvent(((MalzemeDepoStokDurumRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.MalzemeDepoStokDurumRowDeleting != null)) {
+                    this.MalzemeDepoStokDurumRowDeleting(this, new MalzemeDepoStokDurumRowChangeEvent(((MalzemeDepoStokDurumRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveMalzemeDepoStokDurumRow(MalzemeDepoStokDurumRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "MalzemeDepoStokDurumDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2132,17 +2460,6 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableMalzemeDepoKayitGetir.IDColumn]));
-                }
-                set {
-                    this[this.tableMalzemeDepoKayitGetir.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime TARIH {
                 get {
                     try {
@@ -2303,6 +2620,22 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int REF_NO {
+                get {
+                    try {
+                        return ((int)(this[this.tableMalzemeDepoKayitGetir.REF_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'REF_NO\' in table \'MalzemeDepoKayitGetir\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMalzemeDepoKayitGetir.REF_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTARIHNull() {
                 return this.IsNull(this.tableMalzemeDepoKayitGetir.TARIHColumn);
             }
@@ -2419,6 +2752,173 @@ namespace PortalV3._1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUUIDNull() {
                 this[this.tableMalzemeDepoKayitGetir.UUIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsREF_NONull() {
+                return this.IsNull(this.tableMalzemeDepoKayitGetir.REF_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetREF_NONull() {
+                this[this.tableMalzemeDepoKayitGetir.REF_NOColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class MalzemeDepoStokDurumRow : global::System.Data.DataRow {
+            
+            private MalzemeDepoStokDurumDataTable tableMalzemeDepoStokDurum;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MalzemeDepoStokDurumRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableMalzemeDepoStokDurum = ((MalzemeDepoStokDurumDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MALZEME_KODU {
+                get {
+                    try {
+                        return ((string)(this[this.tableMalzemeDepoStokDurum.MALZEME_KODUColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MALZEME_KODU\' in table \'MalzemeDepoStokDurum\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMalzemeDepoStokDurum.MALZEME_KODUColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MALZEME_ADI {
+                get {
+                    try {
+                        return ((string)(this[this.tableMalzemeDepoStokDurum.MALZEME_ADIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MALZEME_ADI\' in table \'MalzemeDepoStokDurum\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMalzemeDepoStokDurum.MALZEME_ADIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int MIKTAR {
+                get {
+                    try {
+                        return ((int)(this[this.tableMalzemeDepoStokDurum.MIKTARColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MIKTAR\' in table \'MalzemeDepoStokDurum\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMalzemeDepoStokDurum.MIKTARColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string BIRIM {
+                get {
+                    try {
+                        return ((string)(this[this.tableMalzemeDepoStokDurum.BIRIMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BIRIM\' in table \'MalzemeDepoStokDurum\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMalzemeDepoStokDurum.BIRIMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UUID {
+                get {
+                    try {
+                        return ((string)(this[this.tableMalzemeDepoStokDurum.UUIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UUID\' in table \'MalzemeDepoStokDurum\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMalzemeDepoStokDurum.UUIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMALZEME_KODUNull() {
+                return this.IsNull(this.tableMalzemeDepoStokDurum.MALZEME_KODUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMALZEME_KODUNull() {
+                this[this.tableMalzemeDepoStokDurum.MALZEME_KODUColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMALZEME_ADINull() {
+                return this.IsNull(this.tableMalzemeDepoStokDurum.MALZEME_ADIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMALZEME_ADINull() {
+                this[this.tableMalzemeDepoStokDurum.MALZEME_ADIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMIKTARNull() {
+                return this.IsNull(this.tableMalzemeDepoStokDurum.MIKTARColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMIKTARNull() {
+                this[this.tableMalzemeDepoStokDurum.MIKTARColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBIRIMNull() {
+                return this.IsNull(this.tableMalzemeDepoStokDurum.BIRIMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBIRIMNull() {
+                this[this.tableMalzemeDepoStokDurum.BIRIMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUUIDNull() {
+                return this.IsNull(this.tableMalzemeDepoStokDurum.UUIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUUIDNull() {
+                this[this.tableMalzemeDepoStokDurum.UUIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2544,6 +3044,40 @@ namespace PortalV3._1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MalzemeDepoKayitGetirRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class MalzemeDepoStokDurumRowChangeEvent : global::System.EventArgs {
+            
+            private MalzemeDepoStokDurumRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MalzemeDepoStokDurumRowChangeEvent(MalzemeDepoStokDurumRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MalzemeDepoStokDurumRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3509,40 +4043,85 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        MalzemeDepo1.*\r\nFROM            MalzemeDepo1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO [MalzemeDepo1] ([ISLEM_CINSI], [TARIH], [FIRMA_KODU], [FIRMA_UNVAN], [BELGE_NO]) VALUES (@ISLEM_CINSI, @TARIH, @FIRMA_KODU, @FIRMA_UNVAN, @BELGE_NO);
-SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDepo1 WHERE (ID = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandText = "UPDATE MalzemeDepo1 SET TARIH = @TARIH,FIRMA_KODU=@FIRMA_KODU,FIRMA_UNVAN=@FIRMA_" +
+                "UNVAN,BELGE_NO=@BELGE_NO WHERE ID = @ID";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ISLEM_CINSI", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "ISLEM_CINSI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TARIH", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIRMA_KODU", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "FIRMA_KODU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIRMA_UNVAN", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "FIRMA_UNVAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BELGE_NO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "BELGE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT top 1 max(ID) FROM MalzemeDepo1 where ISLEM_CINSI = @p1";
+            this._commandCollection[2].CommandText = @"INSERT INTO [MalzemeDepo1] ([ISLEM_CINSI], [TARIH], [FIRMA_KODU], [FIRMA_UNVAN], [BELGE_NO]) VALUES (@ISLEM_CINSI, @TARIH, @FIRMA_KODU, @FIRMA_UNVAN, @BELGE_NO);
+SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDepo1 WHERE (ID = SCOPE_IDENTITY())";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "ISLEM_CINSI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ISLEM_CINSI", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "ISLEM_CINSI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TARIH", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIRMA_KODU", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "FIRMA_KODU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIRMA_UNVAN", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "FIRMA_UNVAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BELGE_NO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "BELGE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO MalzemeDepo2\r\n                         (KALEM_ISLEM, MALZEME_KODU, MA" +
+            this._commandCollection[3].CommandText = "SELECT top 1 max(ID) FROM MalzemeDepo1 where ISLEM_CINSI = @p1";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "ISLEM_CINSI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "INSERT INTO MalzemeDepo2\r\n                         (KALEM_ISLEM, MALZEME_KODU, MA" +
+                "LZEME_ADI, MIKTAR, BIRIM,NOT1,NOT2,CIKILAN_BIRIM,TESLIM_ALAN, UUID, REF_NO)\r\nVAL" +
+                "UES        (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8,@P9,@P10,@P11)\r\n";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P1", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "KALEM_ISLEM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P2", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MALZEME_KODU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P3", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MALZEME_ADI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P4", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MIKTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P5", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "BIRIM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P6", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NOT1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P7", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NOT2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P8", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CIKILAN_BIRIM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P9", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "TESLIM_ALAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P10", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "UUID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P11", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "REF_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "UPDATE MalzemeDepo2 SET KALEM_ISLEM = @P1,MALZEME_KODU=@P2,MALZEME_ADI=@P3,MIKTAR" +
+                "=@P4,BIRIM=@P5,ACIKLAMA=@P6 WHERE UUID = @P7";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P1", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "KALEM_ISLEM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P2", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MALZEME_KODU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P3", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MALZEME_ADI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P4", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MIKTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P5", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "BIRIM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P6", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ACIKLAMA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P7", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "UUID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "INSERT INTO MalzemeDepo2\r\n                         (KALEM_ISLEM, MALZEME_KODU, MA" +
                 "LZEME_ADI, MIKTAR, BIRIM, UUID, ACIKLAMA, REF_NO)\r\nVALUES        (@P1,@P2,@P3,@P" +
                 "4,@P5,@P6,@P7,@P8)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P1", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "KALEM_ISLEM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P2", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MALZEME_KODU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P3", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MALZEME_ADI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P4", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MIKTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P5", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "BIRIM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P6", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "UUID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P7", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ACIKLAMA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P8", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "REF_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P1", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "KALEM_ISLEM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P2", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MALZEME_KODU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P3", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "MALZEME_ADI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P4", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MIKTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P5", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "BIRIM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P6", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "UUID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P7", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ACIKLAMA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P8", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "REF_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "BEGIN TRANSACTION;\r\n\r\nDELETE FROM MalzemeDepo1\r\nWHERE ID = @ID;\r\n\r\nDELETE FROM Ma" +
+                "lzemeDepo2\r\nWHERE REF_NO = @ID;\r\n\r\nCOMMIT;\r\n";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3815,9 +4394,57 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Depo1Guncelle(global::System.Nullable<global::System.DateTime> TARIH, string FIRMA_KODU, string FIRMA_UNVAN, string BELGE_NO, int ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((TARIH.HasValue == true)) {
+                command.Parameters[0].Value = ((System.DateTime)(TARIH.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((FIRMA_KODU == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(FIRMA_KODU));
+            }
+            if ((FIRMA_UNVAN == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(FIRMA_UNVAN));
+            }
+            if ((BELGE_NO == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(BELGE_NO));
+            }
+            command.Parameters[4].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int Depo1Kaydet(string ISLEM_CINSI, global::System.Nullable<global::System.DateTime> TARIH, string FIRMA_KODU, string FIRMA_UNVAN, string BELGE_NO) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((ISLEM_CINSI == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3869,7 +4496,7 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object Depo1SonKayitIDGetir(string p1) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((p1 == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3903,8 +4530,162 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int Depo2CikisKaydet(string P1, string P2, string P3, global::System.Nullable<int> P4, string P5, string P6, string P7, string P8, string P9, string P10, global::System.Nullable<int> P11) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((P1 == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(P1));
+            }
+            if ((P2 == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(P2));
+            }
+            if ((P3 == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(P3));
+            }
+            if ((P4.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(P4.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((P5 == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(P5));
+            }
+            if ((P6 == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(P6));
+            }
+            if ((P7 == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(P7));
+            }
+            if ((P8 == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(P8));
+            }
+            if ((P9 == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(P9));
+            }
+            if ((P10 == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(P10));
+            }
+            if ((P11.HasValue == true)) {
+                command.Parameters[10].Value = ((int)(P11.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Depo2Guncelle(string P1, string P2, string P3, global::System.Nullable<int> P4, string P5, string P6, string P7) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            if ((P1 == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(P1));
+            }
+            if ((P2 == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(P2));
+            }
+            if ((P3 == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(P3));
+            }
+            if ((P4.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(P4.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((P5 == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(P5));
+            }
+            if ((P6 == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(P6));
+            }
+            if ((P7 == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(P7));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int Depo2Kaydet(string P1, string P2, string P3, global::System.Nullable<int> P4, string P5, string P6, string P7, global::System.Nullable<int> P8) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((P1 == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3953,6 +4734,30 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
             else {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DepodanSil(int ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            command.Parameters[0].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4092,7 +4897,6 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "MalzemeDepoKayitGetir";
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("TARIH", "TARIH");
             tableMapping.ColumnMappings.Add("FIRMA_KODU", "FIRMA_KODU");
             tableMapping.ColumnMappings.Add("FIRMA_UNVAN", "FIRMA_UNVAN");
@@ -4103,6 +4907,7 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
             tableMapping.ColumnMappings.Add("MIKTAR", "MIKTAR");
             tableMapping.ColumnMappings.Add("BIRIM", "BIRIM");
             tableMapping.ColumnMappings.Add("UUID", "UUID");
+            tableMapping.ColumnMappings.Add("REF_NO", "REF_NO");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4116,20 +4921,20 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        D1.ID, D1.TARIH, D1.FIRMA_KODU, D1.FIRMA_UNVAN, D1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID
+            this._commandCollection[0].CommandText = @"SELECT        D1.TARIH, D1.FIRMA_KODU, D1.FIRMA_UNVAN, D1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID, d2.REF_NO
 FROM            MalzemeDepo1 AS D1 WITH (nolock) INNER JOIN
                          MalzemeDepo2 AS d2 ON D1.ID = d2.REF_NO
 WHERE        (D1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (D1.ID =
-                             (SELECT        MAX(X.ID) AS Expr1
+                             (SELECT     top 1   MAX(X.ID)
                                FROM            MalzemeDepo1 AS X WITH (NOLOCK) INNER JOIN
-                                                         MalzemeDepo2 AS Y ON X.ID = Y.REF_NO))";
+                                                         MalzemeDepo2 AS Y ON X.ID = Y.REF_NO WHERE X.ISLEM_CINSI = 'SARF_MALZEME_GIRIS'))";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        d1.ID, d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID
+            this._commandCollection[1].CommandText = @"SELECT        d2.REF_NO, d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID
 FROM            MalzemeDepo1 AS d1 WITH (nolock) INNER JOIN
                          MalzemeDepo2 AS d2 ON d1.ID = d2.REF_NO
 WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
@@ -4139,6 +4944,20 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
                                WHERE        (x.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (x.ID < @p1)))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        d2.REF_NO,d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID
+FROM            MalzemeDepo1 AS d1 WITH (nolock) INNER JOIN
+                         MalzemeDepo2 AS d2 ON d1.ID = d2.REF_NO
+WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
+                             (SELECT			min(x.ID) AS Expr1
+                               FROM            MalzemeDepo1 AS x WITH (nolock) INNER JOIN
+                                                         MalzemeDepo2 AS y ON x.ID = y.REF_NO
+                               WHERE        (x.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (x.ID > @p1)))
+
+";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4187,6 +5006,216 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(p1));
             DataSet1.MalzemeDepoKayitGetirDataTable dataTable = new DataSet1.MalzemeDepoKayitGetirDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillSonraki(DataSet1.MalzemeDepoKayitGetirDataTable dataTable, int p1) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(p1));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.MalzemeDepoKayitGetirDataTable MalzemeDepoSonrakiKayit(int p1) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(p1));
+            DataSet1.MalzemeDepoKayitGetirDataTable dataTable = new DataSet1.MalzemeDepoKayitGetirDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class MalzemeDepoStokDurumTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public MalzemeDepoStokDurumTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "MalzemeDepoStokDurum";
+            tableMapping.ColumnMappings.Add("MALZEME_KODU", "MALZEME_KODU");
+            tableMapping.ColumnMappings.Add("MALZEME_ADI", "MALZEME_ADI");
+            tableMapping.ColumnMappings.Add("MIKTAR", "MIKTAR");
+            tableMapping.ColumnMappings.Add("BIRIM", "BIRIM");
+            tableMapping.ColumnMappings.Add("UUID", "UUID");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::PortalV3._1.Properties.Settings.Default.PORTALConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        d2.MALZEME_KODU, d2.MALZEME_ADI, SUM(d2.MIKTAR) - ISNULL
+                             ((SELECT        SUM(Y.MIKTAR) AS Expr1
+                                 FROM            MalzemeDepo1 AS X INNER JOIN
+                                                          MalzemeDepo2 AS Y ON X.ID = Y.REF_NO
+                                 WHERE        (X.ISLEM_CINSI = 'SARF_MALZEME_CIKIS') AND (Y.NOT1 NOT IN ('DOLUM/TAMİR İÇİN SEVK')) AND (Y.UUID = d2.UUID)), 0) AS MIKTAR, d2.BIRIM, d2.UUID
+FROM            MalzemeDepo1 AS d1 INNER JOIN
+                         MalzemeDepo2 AS d2 ON d1.ID = d2.REF_NO
+						 WHERE D1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS'
+GROUP BY d2.MALZEME_KODU, d2.MALZEME_ADI, d2.BIRIM, d2.UUID
+HAVING        (SUM(d2.MIKTAR) - ISNULL
+                             ((SELECT        SUM(Y.MIKTAR) AS Expr1
+                                 FROM            MalzemeDepo1 AS X INNER JOIN
+                                                          MalzemeDepo2 AS Y ON X.ID = Y.REF_NO
+                                 WHERE        (X.ISLEM_CINSI = 'SARF_MALZEME_CIKIS') AND (Y.NOT1 NOT IN ('DOLUM/TAMİR İÇİN SEVK')) AND (Y.UUID = d2.UUID)), 0) <> 0)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.MalzemeDepoStokDurumDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.MalzemeDepoStokDurumDataTable MalzemeDepoHavuzDurumuGetir() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.MalzemeDepoStokDurumDataTable dataTable = new DataSet1.MalzemeDepoStokDurumDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

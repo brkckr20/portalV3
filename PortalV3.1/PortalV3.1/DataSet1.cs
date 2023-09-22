@@ -9,6 +9,13 @@
 }
 
 namespace PortalV3._1.DataSet1TableAdapters {
+    partial class CariTableAdapter
+    {
+    }
+
+    partial class MalzemeDepoKayitGetirTableAdapter
+    {
+    }
     
     
     public partial class SarfMalzemeKartiTableAdapter {

@@ -33,9 +33,10 @@
             this.kartlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.malzemeKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.firmaKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabMain = new System.Windows.Forms.TabControl();
             this.malzemeDepoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.malzemeDepoGirişToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabMain = new System.Windows.Forms.TabControl();
+            this.malzemeDepoÇıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // 
             this.malzemeKartıToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("malzemeKartıToolStripMenuItem.Image")));
             this.malzemeKartıToolStripMenuItem.Name = "malzemeKartıToolStripMenuItem";
-            this.malzemeKartıToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.malzemeKartıToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.malzemeKartıToolStripMenuItem.Text = "Malzeme Kartı";
             this.malzemeKartıToolStripMenuItem.Click += new System.EventHandler(this.malzemeKartıToolStripMenuItem_Click);
             // 
@@ -72,9 +73,27 @@
             // 
             this.firmaKartıToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("firmaKartıToolStripMenuItem.Image")));
             this.firmaKartıToolStripMenuItem.Name = "firmaKartıToolStripMenuItem";
-            this.firmaKartıToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.firmaKartıToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.firmaKartıToolStripMenuItem.Text = "Firma Kartı";
             this.firmaKartıToolStripMenuItem.Click += new System.EventHandler(this.firmaKartıToolStripMenuItem_Click);
+            // 
+            // malzemeDepoToolStripMenuItem
+            // 
+            this.malzemeDepoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.malzemeDepoGirişToolStripMenuItem,
+            this.malzemeDepoÇıkışToolStripMenuItem});
+            this.malzemeDepoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("malzemeDepoToolStripMenuItem.Image")));
+            this.malzemeDepoToolStripMenuItem.Name = "malzemeDepoToolStripMenuItem";
+            this.malzemeDepoToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
+            this.malzemeDepoToolStripMenuItem.Text = "Malzeme Depo";
+            // 
+            // malzemeDepoGirişToolStripMenuItem
+            // 
+            this.malzemeDepoGirişToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("malzemeDepoGirişToolStripMenuItem.Image")));
+            this.malzemeDepoGirişToolStripMenuItem.Name = "malzemeDepoGirişToolStripMenuItem";
+            this.malzemeDepoGirişToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.malzemeDepoGirişToolStripMenuItem.Text = "Malzeme Depo Giriş";
+            this.malzemeDepoGirişToolStripMenuItem.Click += new System.EventHandler(this.malzemeDepoGirişToolStripMenuItem_Click);
             // 
             // tabMain
             // 
@@ -85,22 +104,13 @@
             this.tabMain.Size = new System.Drawing.Size(1272, 484);
             this.tabMain.TabIndex = 1;
             // 
-            // malzemeDepoToolStripMenuItem
+            // malzemeDepoÇıkışToolStripMenuItem
             // 
-            this.malzemeDepoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.malzemeDepoGirişToolStripMenuItem});
-            this.malzemeDepoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("malzemeDepoToolStripMenuItem.Image")));
-            this.malzemeDepoToolStripMenuItem.Name = "malzemeDepoToolStripMenuItem";
-            this.malzemeDepoToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
-            this.malzemeDepoToolStripMenuItem.Text = "Malzeme Depo";
-            // 
-            // malzemeDepoGirişToolStripMenuItem
-            // 
-            this.malzemeDepoGirişToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("malzemeDepoGirişToolStripMenuItem.Image")));
-            this.malzemeDepoGirişToolStripMenuItem.Name = "malzemeDepoGirişToolStripMenuItem";
-            this.malzemeDepoGirişToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.malzemeDepoGirişToolStripMenuItem.Text = "Malzeme Depo Giriş";
-            this.malzemeDepoGirişToolStripMenuItem.Click += new System.EventHandler(this.malzemeDepoGirişToolStripMenuItem_Click);
+            this.malzemeDepoÇıkışToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("malzemeDepoÇıkışToolStripMenuItem.Image")));
+            this.malzemeDepoÇıkışToolStripMenuItem.Name = "malzemeDepoÇıkışToolStripMenuItem";
+            this.malzemeDepoÇıkışToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.malzemeDepoÇıkışToolStripMenuItem.Text = "Malzeme Depo Çıkış";
+            this.malzemeDepoÇıkışToolStripMenuItem.Click += new System.EventHandler(this.malzemeDepoÇıkışToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -132,6 +142,7 @@
         private System.Windows.Forms.ToolStripMenuItem firmaKartıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem malzemeDepoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem malzemeDepoGirişToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem malzemeDepoÇıkışToolStripMenuItem;
 
     }
 }
