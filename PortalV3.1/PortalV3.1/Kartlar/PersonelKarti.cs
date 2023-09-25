@@ -21,16 +21,27 @@ namespace PortalV3._1.Kartlar
 
         private void btnPersonelKartiKaydet_Click(object sender, EventArgs e)
         {
-            try {
-                ds.PersonelEkle(txtAdSoyad.Text,txtDepartman.Text);
-                bildirim.Basarili("Personel kayıt işlemi başarılı","Bilgi");
-                //resetForm();
-                sonKaydiYansit();
+            if (txtKayitNo.Text == "")
+            {
+                try
+                {
+                    ds.PersonelEkle(txtAdSoyad.Text, txtDepartman.Text);
+                    bildirim.Basarili("Personel kayıt işlemi başarılı", "Bilgi");
+                    //resetForm();
+                    sonKaydiYansit();
+                    tblPersonel.DataSource = ds.PersonelGetir();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Hata" + ex.Message);
+                }
+            }
+            else {
+                ds.PersonelGuncelle(txtAdSoyad.Text, txtDepartman.Text, int.Parse(txtKayitNo.Text));
+                bildirim.Basarili("Personel güncelleme işlemi başarılı", "Bilgi");
                 tblPersonel.DataSource = ds.PersonelGetir();
             }
-            catch (Exception ex) {
-                Console.WriteLine("Hata" + ex.Message);
-            }
+            
         }
 
         public void resetForm() {
@@ -53,6 +64,28 @@ namespace PortalV3._1.Kartlar
         private void btnPersonelKartiYeni_Click(object sender, EventArgs e)
         {
             resetForm();
+        }
+
+        private void tblPersonel_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtKayitNo.Text = tblPersonel.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtAdSoyad.Text = tblPersonel.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtDepartman.Text = tblPersonel.Rows[e.RowIndex].Cells[2].Value.ToString();
+        }
+
+        private void btmPersonelKartiSil_Click(object sender, EventArgs e)
+        {
+            if (txtKayitNo.Text == "")
+            {
+                bildirim.Basarisiz("Lütfen silmek istediğiniz personelin olduğu satıra tıklayınız!", "Uyarı");
+            }
+            else {
+                if (bildirim.onayAl("Personel silenecek!\nEmin misiniz?", "Uyarı"))
+                {
+                    ds.PersonelSil(int.Parse(txtKayitNo.Text));
+                    tblPersonel.DataSource = ds.PersonelGetir();
+                }
+            }
         }
 
     }

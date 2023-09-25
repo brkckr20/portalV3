@@ -89,6 +89,7 @@
             this.btmPersonelKartiSil.Text = "Sil";
             this.btmPersonelKartiSil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btmPersonelKartiSil.UseVisualStyleBackColor = true;
+            this.btmPersonelKartiSil.Click += new System.EventHandler(this.btmPersonelKartiSil_Click);
             // 
             // btnPersonelKartiKaydet
             // 
@@ -205,6 +206,7 @@
             this.tblPersonel.Name = "tblPersonel";
             this.tblPersonel.Size = new System.Drawing.Size(1127, 344);
             this.tblPersonel.TabIndex = 0;
+            this.tblPersonel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblPersonel_CellClick);
             // 
             // PersonelKarti
             // 
