@@ -36,6 +36,8 @@ namespace PortalV3._1
             tabMain.SelectedTab = newTab;
             formAdi.Show();
         }
+
+        /*kartlar*/
         
         private void malzemeKartıToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -49,6 +51,13 @@ namespace PortalV3._1
             tabOlustur("Firma Kartı", fk);
         }
 
+        private void personelKartıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Kartlar.PersonelKarti pk = new Kartlar.PersonelKarti();
+            tabOlustur("Personel Kartı", pk);
+        }
+
+        /*depolar*/
         private void malzemeDepoGirişToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Depolar.MalzemeDepo.MalzemeDepoGiris mg = new Depolar.MalzemeDepo.MalzemeDepoGiris();
@@ -60,5 +69,7 @@ namespace PortalV3._1
             Depolar.MalzemeDepo.MalzemeDepoCikis mk = new Depolar.MalzemeDepo.MalzemeDepoCikis();
             tabOlustur("Malzeme Depo Çıkış", mk);
         }
+
+        
     }
 }

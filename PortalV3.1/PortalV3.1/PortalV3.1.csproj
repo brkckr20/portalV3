@@ -83,6 +83,12 @@
     <Compile Include="Kartlar\MalzemeKarti.Designer.cs">
       <DependentUpon>MalzemeKarti.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kartlar\PersonelKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kartlar\PersonelKarti.Designer.cs">
+      <DependentUpon>PersonelKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\FirmaListesi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kartlar\MalzemeKarti.resx">
       <DependentUpon>MalzemeKarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kartlar\PersonelKarti.resx">
+      <DependentUpon>PersonelKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\FirmaListesi.resx">
       <DependentUpon>FirmaListesi.cs</DependentUpon>
