@@ -1400,6 +1400,8 @@ namespace PortalV3._1 {
             
             private global::System.Data.DataColumn columnUUID;
             
+            private global::System.Data.DataColumn columnACIKLAMA;
+            
             private global::System.Data.DataColumn columnREF_NO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1517,6 +1519,14 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ACIKLAMAColumn {
+                get {
+                    return this.columnACIKLAMA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn REF_NOColumn {
                 get {
                     return this.columnREF_NO;
@@ -1560,7 +1570,7 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MalzemeDepoKayitGetirRow AddMalzemeDepoKayitGetirRow(System.DateTime TARIH, string FIRMA_KODU, string FIRMA_UNVAN, string BELGE_NO, string KALEM_ISLEM, string MALZEME_KODU, string MALZEME_ADI, int MIKTAR, string BIRIM, string UUID, int REF_NO) {
+            public MalzemeDepoKayitGetirRow AddMalzemeDepoKayitGetirRow(System.DateTime TARIH, string FIRMA_KODU, string FIRMA_UNVAN, string BELGE_NO, string KALEM_ISLEM, string MALZEME_KODU, string MALZEME_ADI, int MIKTAR, string BIRIM, string UUID, string ACIKLAMA, int REF_NO) {
                 MalzemeDepoKayitGetirRow rowMalzemeDepoKayitGetirRow = ((MalzemeDepoKayitGetirRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TARIH,
@@ -1573,6 +1583,7 @@ namespace PortalV3._1 {
                         MIKTAR,
                         BIRIM,
                         UUID,
+                        ACIKLAMA,
                         REF_NO};
                 rowMalzemeDepoKayitGetirRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMalzemeDepoKayitGetirRow);
@@ -1606,6 +1617,7 @@ namespace PortalV3._1 {
                 this.columnMIKTAR = base.Columns["MIKTAR"];
                 this.columnBIRIM = base.Columns["BIRIM"];
                 this.columnUUID = base.Columns["UUID"];
+                this.columnACIKLAMA = base.Columns["ACIKLAMA"];
                 this.columnREF_NO = base.Columns["REF_NO"];
             }
             
@@ -1632,6 +1644,8 @@ namespace PortalV3._1 {
                 base.Columns.Add(this.columnBIRIM);
                 this.columnUUID = new global::System.Data.DataColumn("UUID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUUID);
+                this.columnACIKLAMA = new global::System.Data.DataColumn("ACIKLAMA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnACIKLAMA);
                 this.columnREF_NO = new global::System.Data.DataColumn("REF_NO", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnREF_NO);
                 this.columnFIRMA_KODU.MaxLength = 15;
@@ -1642,6 +1656,7 @@ namespace PortalV3._1 {
                 this.columnMALZEME_ADI.MaxLength = 50;
                 this.columnBIRIM.MaxLength = 10;
                 this.columnUUID.MaxLength = 255;
+                this.columnACIKLAMA.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2083,11 +2098,11 @@ namespace PortalV3._1 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class PersonelKartiDataTable : global::System.Data.TypedTableBase<PersonelKartiRow> {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnKayıt_No;
             
-            private global::System.Data.DataColumn columnAD_SOYAD;
+            private global::System.Data.DataColumn columnAdı_Soyadı;
             
-            private global::System.Data.DataColumn columnDEPARTMAN;
+            private global::System.Data.DataColumn columnDepartmanı;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2124,25 +2139,25 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn Kayıt_NoColumn {
                 get {
-                    return this.columnID;
+                    return this.columnKayıt_No;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AD_SOYADColumn {
+            public global::System.Data.DataColumn Adı_SoyadıColumn {
                 get {
-                    return this.columnAD_SOYAD;
+                    return this.columnAdı_Soyadı;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DEPARTMANColumn {
+            public global::System.Data.DataColumn DepartmanıColumn {
                 get {
-                    return this.columnDEPARTMAN;
+                    return this.columnDepartmanı;
                 }
             }
             
@@ -2183,12 +2198,12 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PersonelKartiRow AddPersonelKartiRow(int ID, string AD_SOYAD, string DEPARTMAN) {
+            public PersonelKartiRow AddPersonelKartiRow(string Adı_Soyadı, string Departmanı) {
                 PersonelKartiRow rowPersonelKartiRow = ((PersonelKartiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
-                        AD_SOYAD,
-                        DEPARTMAN};
+                        null,
+                        Adı_Soyadı,
+                        Departmanı};
                 rowPersonelKartiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPersonelKartiRow);
                 return rowPersonelKartiRow;
@@ -2211,22 +2226,27 @@ namespace PortalV3._1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnAD_SOYAD = base.Columns["AD_SOYAD"];
-                this.columnDEPARTMAN = base.Columns["DEPARTMAN"];
+                this.columnKayıt_No = base.Columns["Kayıt No"];
+                this.columnAdı_Soyadı = base.Columns["Adı Soyadı"];
+                this.columnDepartmanı = base.Columns["Departmanı"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnAD_SOYAD = new global::System.Data.DataColumn("AD_SOYAD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAD_SOYAD);
-                this.columnDEPARTMAN = new global::System.Data.DataColumn("DEPARTMAN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDEPARTMAN);
-                this.columnAD_SOYAD.MaxLength = 50;
-                this.columnDEPARTMAN.MaxLength = 50;
+                this.columnKayıt_No = new global::System.Data.DataColumn("Kayıt No", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKayıt_No);
+                this.columnAdı_Soyadı = new global::System.Data.DataColumn("Adı Soyadı", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdı_Soyadı);
+                this.columnDepartmanı = new global::System.Data.DataColumn("Departmanı", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartmanı);
+                this.columnKayıt_No.AutoIncrement = true;
+                this.columnKayıt_No.AutoIncrementSeed = -1;
+                this.columnKayıt_No.AutoIncrementStep = -1;
+                this.columnKayıt_No.AllowDBNull = false;
+                this.columnKayıt_No.ReadOnly = true;
+                this.columnAdı_Soyadı.MaxLength = 50;
+                this.columnDepartmanı.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2932,6 +2952,22 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ACIKLAMA {
+                get {
+                    try {
+                        return ((string)(this[this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ACIKLAMA\' in table \'MalzemeDepoKayitGetir\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int REF_NO {
                 get {
                     try {
@@ -3064,6 +3100,18 @@ namespace PortalV3._1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUUIDNull() {
                 this[this.tableMalzemeDepoKayitGetir.UUIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsACIKLAMANull() {
+                return this.IsNull(this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetACIKLAMANull() {
+                this[this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3250,86 +3298,69 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
+            public int Kayıt_No {
+                get {
+                    return ((int)(this[this.tablePersonelKarti.Kayıt_NoColumn]));
+                }
+                set {
+                    this[this.tablePersonelKarti.Kayıt_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Adı_Soyadı {
                 get {
                     try {
-                        return ((int)(this[this.tablePersonelKarti.IDColumn]));
+                        return ((string)(this[this.tablePersonelKarti.Adı_SoyadıColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'PersonelKarti\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Adı Soyadı\' in table \'PersonelKarti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePersonelKarti.IDColumn] = value;
+                    this[this.tablePersonelKarti.Adı_SoyadıColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AD_SOYAD {
+            public string Departmanı {
                 get {
                     try {
-                        return ((string)(this[this.tablePersonelKarti.AD_SOYADColumn]));
+                        return ((string)(this[this.tablePersonelKarti.DepartmanıColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AD_SOYAD\' in table \'PersonelKarti\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Departmanı\' in table \'PersonelKarti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePersonelKarti.AD_SOYADColumn] = value;
+                    this[this.tablePersonelKarti.DepartmanıColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DEPARTMAN {
-                get {
-                    try {
-                        return ((string)(this[this.tablePersonelKarti.DEPARTMANColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DEPARTMAN\' in table \'PersonelKarti\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePersonelKarti.DEPARTMANColumn] = value;
-                }
+            public bool IsAdı_SoyadıNull() {
+                return this.IsNull(this.tablePersonelKarti.Adı_SoyadıColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsIDNull() {
-                return this.IsNull(this.tablePersonelKarti.IDColumn);
+            public void SetAdı_SoyadıNull() {
+                this[this.tablePersonelKarti.Adı_SoyadıColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetIDNull() {
-                this[this.tablePersonelKarti.IDColumn] = global::System.Convert.DBNull;
+            public bool IsDepartmanıNull() {
+                return this.IsNull(this.tablePersonelKarti.DepartmanıColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAD_SOYADNull() {
-                return this.IsNull(this.tablePersonelKarti.AD_SOYADColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAD_SOYADNull() {
-                this[this.tablePersonelKarti.AD_SOYADColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDEPARTMANNull() {
-                return this.IsNull(this.tablePersonelKarti.DEPARTMANColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDEPARTMANNull() {
-                this[this.tablePersonelKarti.DEPARTMANColumn] = global::System.Convert.DBNull;
+            public void SetDepartmanıNull() {
+                this[this.tablePersonelKarti.DepartmanıColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4550,7 +4581,7 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = "INSERT INTO MalzemeDepo2\r\n                         (KALEM_ISLEM, MALZEME_KODU, MA" +
-                "LZEME_ADI, MIKTAR, BIRIM, UUID, ACIKLAMA, REF_NO)\r\nVALUES        (@P1,@P2,@P3,@P" +
+                "LZEME_ADI, MIKTAR, BIRIM, UUID, REF_NO, ACIKLAMA)\r\nVALUES        (@P1,@P2,@P3,@P" +
                 "4,@P5,@P6,@P7,@P8)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P1", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "KALEM_ISLEM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4559,8 +4590,8 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P4", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MIKTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P5", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "BIRIM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P6", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "UUID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P7", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ACIKLAMA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P8", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "REF_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P7", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "REF_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P8", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "ACIKLAMA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "BEGIN TRANSACTION;\r\n\r\nDELETE FROM MalzemeDepo1\r\nWHERE ID = @ID;\r\n\r\nDELETE FROM Ma" +
@@ -5129,7 +5160,7 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int Depo2Kaydet(string P1, string P2, string P3, global::System.Nullable<int> P4, string P5, string P6, string P7, global::System.Nullable<int> P8) {
+        public virtual int Depo2Kaydet(string P1, string P2, string P3, global::System.Nullable<int> P4, string P5, string P6, global::System.Nullable<int> P7, string P8) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((P1 == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -5167,17 +5198,17 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
             else {
                 command.Parameters[5].Value = ((string)(P6));
             }
-            if ((P7 == null)) {
+            if ((P7.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(P7.Value));
+            }
+            else {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                command.Parameters[6].Value = ((string)(P7));
-            }
-            if ((P8.HasValue == true)) {
-                command.Parameters[7].Value = ((int)(P8.Value));
-            }
-            else {
+            if ((P8 == null)) {
                 command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(P8));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5352,6 +5383,7 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
             tableMapping.ColumnMappings.Add("MIKTAR", "MIKTAR");
             tableMapping.ColumnMappings.Add("BIRIM", "BIRIM");
             tableMapping.ColumnMappings.Add("UUID", "UUID");
+            tableMapping.ColumnMappings.Add("ACIKLAMA", "ACIKLAMA");
             tableMapping.ColumnMappings.Add("REF_NO", "REF_NO");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -5369,7 +5401,7 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        D1.TARIH, D1.FIRMA_KODU, D1.FIRMA_UNVAN, D1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID, d2.REF_NO
+            this._commandCollection[0].CommandText = @"SELECT        D1.TARIH, D1.FIRMA_KODU, D1.FIRMA_UNVAN, D1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID, d2.REF_NO,D2.ACIKLAMA
 FROM            MalzemeDepo1 AS D1 WITH (nolock) INNER JOIN
                          MalzemeDepo2 AS d2 ON D1.ID = d2.REF_NO
 WHERE        (D1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (D1.ID =
@@ -5787,18 +5819,17 @@ HAVING        (SUM(d2.MIKTAR) - ISNULL
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "PersonelKarti";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("AD_SOYAD", "AD_SOYAD");
-            tableMapping.ColumnMappings.Add("DEPARTMAN", "DEPARTMAN");
+            tableMapping.ColumnMappings.Add("Kayıt No", "Kayıt No");
+            tableMapping.ColumnMappings.Add("Adı Soyadı", "Adı Soyadı");
+            tableMapping.ColumnMappings.Add("Departmanı", "Departmanı");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [PersonelKarti] ([ID], [AD_SOYAD], [DEPARTMAN]) VALUES (@ID, @AD_SOYA" +
-                "D, @DEPARTMAN)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [PersonelKarti] ([AD_SOYAD], [DEPARTMAN]) VALUES (@Adı_Soyadı, @Depar" +
+                "tmanı)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AD_SOYAD", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AD_SOYAD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEPARTMAN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DEPARTMAN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adı_Soyadı", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adı Soyadı", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Departmanı", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Departmanı", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5814,7 +5845,8 @@ HAVING        (SUM(d2.MIKTAR) - ISNULL
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ID, AD_SOYAD, DEPARTMAN\r\nFROM            PersonelKarti";
+            this._commandCollection[0].CommandText = "SELECT        ID AS \'Kayıt No\', AD_SOYAD AS \'Adı Soyadı\', DEPARTMAN AS \'Departman" +
+                "ı\'\r\nFROM            PersonelKarti";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -5899,24 +5931,18 @@ HAVING        (SUM(d2.MIKTAR) - ISNULL
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> ID, string AD_SOYAD, string DEPARTMAN) {
-            if ((ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID.Value));
+        public virtual int Insert(string Adı_Soyadı, string Departmanı) {
+            if ((Adı_Soyadı == null)) {
+                throw new global::System.ArgumentNullException("Adı_Soyadı");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Adı_Soyadı));
             }
-            if ((AD_SOYAD == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(AD_SOYAD));
-            }
-            if ((DEPARTMAN == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((Departmanı == null)) {
+                throw new global::System.ArgumentNullException("Departmanı");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DEPARTMAN));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Departmanı));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

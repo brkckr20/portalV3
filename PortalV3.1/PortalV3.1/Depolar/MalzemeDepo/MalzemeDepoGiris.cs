@@ -52,7 +52,12 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                     {
                         islem_cinsi = row.Cells[0].Value.ToString();
                     }
-
+                    /*
+                     INSERT INTO MalzemeDepo2
+                         (KALEM_ISLEM, MALZEME_KODU, MALZEME_ADI, MIKTAR, BIRIM, UUID, REF_NO, ACIKLAMA)
+VALUES        (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8)
+                     
+                     */
                     if (!row.IsNewRow &&
                         row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null &&
                         row.Cells[5].Value != null && row.Cells[6].Value != null)
@@ -64,8 +69,9 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                             int.Parse(row.Cells[3].Value.ToString()),
                             row.Cells[4].Value.ToString(),
                             row.Cells[6].Value.ToString(),
-                            row.Cells[5].Value.ToString(),
-                            kayitNo);
+                            //row.Cells[5].Value.ToString(),
+                            kayitNo,
+                            row.Cells[7].Value.ToString());
                     }
                 }
 
@@ -136,7 +142,7 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                 malzemeGirisKalemler.Rows.Clear(); // tekrar tıklanınca alt alta eklememesi için
                 foreach (DataSet1.MalzemeDepoKayitGetirRow satir in sonKayitlar)
                 {
-                    malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, "");
+                    malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, satir.ACIKLAMA);
                 }
             }
         }
@@ -162,7 +168,7 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                 malzemeGirisKalemler.Rows.Clear(); // tekrar tıklanınca alt alta eklememesi için
                 foreach (DataSet1.MalzemeDepoKayitGetirRow satir in sonKayitlar)
                 {
-                    malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, "");
+                    malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, satir.ACIKLAMA);
                 }
             }
             else {
