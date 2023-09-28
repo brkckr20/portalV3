@@ -56,12 +56,6 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                         row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null &&
                         row.Cells[7].Value != null && row.Cells[6].Value != null)
                     {
-                        /*
-                         INSERT INTO MalzemeDepo2
-                         (KALEM_ISLEM, MALZEME_KODU, MALZEME_ADI, MIKTAR, BIRIM, UUID, REF_NO, ACIKLAMA)
-VALUES        (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8)
-                         * 
-                         */
                         d1.Depo2Kaydet(
                             islem_cinsi,
                             row.Cells[1].Value.ToString(),

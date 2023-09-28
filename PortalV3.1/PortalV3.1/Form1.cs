@@ -90,6 +90,12 @@ namespace PortalV3._1
             tabOlustur("Malzeme Depo Çıkış", mk);
         }
 
+        private void güvenBilgisayarHizmetRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Raporlar.Formlar.GuvenBilgisayarHizmetRaporu frm = new Raporlar.Formlar.GuvenBilgisayarHizmetRaporu();
+            frm.Show();
+        }
+
         
     }
 }

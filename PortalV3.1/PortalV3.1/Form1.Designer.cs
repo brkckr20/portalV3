@@ -33,11 +33,13 @@
             this.kartlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.malzemeKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.firmaKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personelKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.malzemeDepoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.malzemeDepoGirişToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.malzemeDepoÇıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMain = new System.Windows.Forms.TabControl();
-            this.personelKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.raporToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güvenBilgisayarHizmetRaporuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kartlarToolStripMenuItem,
-            this.malzemeDepoToolStripMenuItem});
+            this.malzemeDepoToolStripMenuItem,
+            this.raporToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1272, 24);
@@ -67,7 +70,7 @@
             // 
             this.malzemeKartıToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("malzemeKartıToolStripMenuItem.Image")));
             this.malzemeKartıToolStripMenuItem.Name = "malzemeKartıToolStripMenuItem";
-            this.malzemeKartıToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.malzemeKartıToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.malzemeKartıToolStripMenuItem.Text = "Malzeme Kartı";
             this.malzemeKartıToolStripMenuItem.Click += new System.EventHandler(this.malzemeKartıToolStripMenuItem_Click);
             // 
@@ -75,9 +78,17 @@
             // 
             this.firmaKartıToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("firmaKartıToolStripMenuItem.Image")));
             this.firmaKartıToolStripMenuItem.Name = "firmaKartıToolStripMenuItem";
-            this.firmaKartıToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.firmaKartıToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.firmaKartıToolStripMenuItem.Text = "Firma Kartı";
             this.firmaKartıToolStripMenuItem.Click += new System.EventHandler(this.firmaKartıToolStripMenuItem_Click);
+            // 
+            // personelKartıToolStripMenuItem
+            // 
+            this.personelKartıToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("personelKartıToolStripMenuItem.Image")));
+            this.personelKartıToolStripMenuItem.Name = "personelKartıToolStripMenuItem";
+            this.personelKartıToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.personelKartıToolStripMenuItem.Text = "Personel Kartı";
+            this.personelKartıToolStripMenuItem.Click += new System.EventHandler(this.personelKartıToolStripMenuItem_Click);
             // 
             // malzemeDepoToolStripMenuItem
             // 
@@ -114,13 +125,22 @@
             this.tabMain.Size = new System.Drawing.Size(1272, 484);
             this.tabMain.TabIndex = 1;
             // 
-            // personelKartıToolStripMenuItem
+            // raporToolStripMenuItem
             // 
-            this.personelKartıToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("personelKartıToolStripMenuItem.Image")));
-            this.personelKartıToolStripMenuItem.Name = "personelKartıToolStripMenuItem";
-            this.personelKartıToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.personelKartıToolStripMenuItem.Text = "Personel Kartı";
-            this.personelKartıToolStripMenuItem.Click += new System.EventHandler(this.personelKartıToolStripMenuItem_Click);
+            this.raporToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.güvenBilgisayarHizmetRaporuToolStripMenuItem});
+            this.raporToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("raporToolStripMenuItem.Image")));
+            this.raporToolStripMenuItem.Name = "raporToolStripMenuItem";
+            this.raporToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.raporToolStripMenuItem.Text = "Rapor";
+            // 
+            // güvenBilgisayarHizmetRaporuToolStripMenuItem
+            // 
+            this.güvenBilgisayarHizmetRaporuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("güvenBilgisayarHizmetRaporuToolStripMenuItem.Image")));
+            this.güvenBilgisayarHizmetRaporuToolStripMenuItem.Name = "güvenBilgisayarHizmetRaporuToolStripMenuItem";
+            this.güvenBilgisayarHizmetRaporuToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.güvenBilgisayarHizmetRaporuToolStripMenuItem.Text = "Güven Bilgisayar Hizmet Raporu";
+            this.güvenBilgisayarHizmetRaporuToolStripMenuItem.Click += new System.EventHandler(this.güvenBilgisayarHizmetRaporuToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -154,6 +174,8 @@
         private System.Windows.Forms.ToolStripMenuItem malzemeDepoGirişToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem malzemeDepoÇıkışToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personelKartıToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem raporToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem güvenBilgisayarHizmetRaporuToolStripMenuItem;
 
     }
 }

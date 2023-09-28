@@ -13,4 +13,6 @@ E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Modal
 E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Depolar.MalzemeDepo.MalzemeDepoCikis.resources
 E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Modals.FirmaListesi.resources
 E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Kartlar.PersonelKarti.resources
-E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3.1.csprojResolveAssemblyReference.cache
+E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Raporlar.Formlar.GuvenBilgisayarHizmetRaporu.resources
+E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\RdlCompile.cache
+E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\RdlCompile.compiled
