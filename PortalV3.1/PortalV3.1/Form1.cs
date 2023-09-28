@@ -23,8 +23,28 @@ namespace PortalV3._1
           //  dataGridView1.DataSource = ds.GetData();
         }
 
+        private void TabMain_MouseDown(object sender, MouseEventArgs e)
+        {
+            for (int i = 0; i < tabMain.TabPages.Count; i++)
+            {
+                Rectangle rectCloseImage = new Rectangle(
+                    tabMain.GetTabRect(i).Right - 16,
+                    tabMain.GetTabRect(i).Top + 4,
+                    12, 12);
+
+                if (rectCloseImage.Contains(e.Location))
+                {
+                    // Kapatma düğmesine tıklanmış.
+                    tabMain.TabPages.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+        private Point _imagelocation = new Point(13, 5);
+        private Point _imgHitArea = new Point(13, 2);
         private void tabOlustur(string baslik, Form formAdi)
         {
+            
             TabPage newTab = new TabPage(baslik);
             formAdi.TopLevel = false;
             formAdi.FormBorderStyle = FormBorderStyle.None;

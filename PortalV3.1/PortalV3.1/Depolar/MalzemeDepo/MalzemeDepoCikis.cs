@@ -113,5 +113,10 @@ namespace PortalV3._1.Depolar.MalzemeDepo
             lblFirmaUnvanText.Text = "";
             tblMalzemeCikis.RowCount = 1;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
      }
 }

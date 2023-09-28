@@ -1400,9 +1400,9 @@ namespace PortalV3._1 {
             
             private global::System.Data.DataColumn columnUUID;
             
-            private global::System.Data.DataColumn columnACIKLAMA;
-            
             private global::System.Data.DataColumn columnREF_NO;
+            
+            private global::System.Data.DataColumn columnACIKLAMA;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1519,17 +1519,17 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ACIKLAMAColumn {
+            public global::System.Data.DataColumn REF_NOColumn {
                 get {
-                    return this.columnACIKLAMA;
+                    return this.columnREF_NO;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn REF_NOColumn {
+            public global::System.Data.DataColumn ACIKLAMAColumn {
                 get {
-                    return this.columnREF_NO;
+                    return this.columnACIKLAMA;
                 }
             }
             
@@ -1570,7 +1570,7 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MalzemeDepoKayitGetirRow AddMalzemeDepoKayitGetirRow(System.DateTime TARIH, string FIRMA_KODU, string FIRMA_UNVAN, string BELGE_NO, string KALEM_ISLEM, string MALZEME_KODU, string MALZEME_ADI, int MIKTAR, string BIRIM, string UUID, string ACIKLAMA, int REF_NO) {
+            public MalzemeDepoKayitGetirRow AddMalzemeDepoKayitGetirRow(System.DateTime TARIH, string FIRMA_KODU, string FIRMA_UNVAN, string BELGE_NO, string KALEM_ISLEM, string MALZEME_KODU, string MALZEME_ADI, int MIKTAR, string BIRIM, string UUID, int REF_NO, string ACIKLAMA) {
                 MalzemeDepoKayitGetirRow rowMalzemeDepoKayitGetirRow = ((MalzemeDepoKayitGetirRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TARIH,
@@ -1583,8 +1583,8 @@ namespace PortalV3._1 {
                         MIKTAR,
                         BIRIM,
                         UUID,
-                        ACIKLAMA,
-                        REF_NO};
+                        REF_NO,
+                        ACIKLAMA};
                 rowMalzemeDepoKayitGetirRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMalzemeDepoKayitGetirRow);
                 return rowMalzemeDepoKayitGetirRow;
@@ -1617,8 +1617,8 @@ namespace PortalV3._1 {
                 this.columnMIKTAR = base.Columns["MIKTAR"];
                 this.columnBIRIM = base.Columns["BIRIM"];
                 this.columnUUID = base.Columns["UUID"];
-                this.columnACIKLAMA = base.Columns["ACIKLAMA"];
                 this.columnREF_NO = base.Columns["REF_NO"];
+                this.columnACIKLAMA = base.Columns["ACIKLAMA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1644,10 +1644,10 @@ namespace PortalV3._1 {
                 base.Columns.Add(this.columnBIRIM);
                 this.columnUUID = new global::System.Data.DataColumn("UUID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUUID);
-                this.columnACIKLAMA = new global::System.Data.DataColumn("ACIKLAMA", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnACIKLAMA);
                 this.columnREF_NO = new global::System.Data.DataColumn("REF_NO", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnREF_NO);
+                this.columnACIKLAMA = new global::System.Data.DataColumn("ACIKLAMA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnACIKLAMA);
                 this.columnFIRMA_KODU.MaxLength = 15;
                 this.columnFIRMA_UNVAN.MaxLength = 50;
                 this.columnBELGE_NO.MaxLength = 50;
@@ -1656,7 +1656,7 @@ namespace PortalV3._1 {
                 this.columnMALZEME_ADI.MaxLength = 50;
                 this.columnBIRIM.MaxLength = 10;
                 this.columnUUID.MaxLength = 255;
-                this.columnACIKLAMA.MaxLength = 50;
+                this.columnACIKLAMA.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2952,22 +2952,6 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ACIKLAMA {
-                get {
-                    try {
-                        return ((string)(this[this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ACIKLAMA\' in table \'MalzemeDepoKayitGetir\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int REF_NO {
                 get {
                     try {
@@ -2979,6 +2963,22 @@ namespace PortalV3._1 {
                 }
                 set {
                     this[this.tableMalzemeDepoKayitGetir.REF_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ACIKLAMA {
+                get {
+                    try {
+                        return ((string)(this[this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ACIKLAMA\' in table \'MalzemeDepoKayitGetir\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn] = value;
                 }
             }
             
@@ -3104,18 +3104,6 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsACIKLAMANull() {
-                return this.IsNull(this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetACIKLAMANull() {
-                this[this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsREF_NONull() {
                 return this.IsNull(this.tableMalzemeDepoKayitGetir.REF_NOColumn);
             }
@@ -3124,6 +3112,18 @@ namespace PortalV3._1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetREF_NONull() {
                 this[this.tableMalzemeDepoKayitGetir.REF_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsACIKLAMANull() {
+                return this.IsNull(this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetACIKLAMANull() {
+                this[this.tableMalzemeDepoKayitGetir.ACIKLAMAColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5383,8 +5383,8 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
             tableMapping.ColumnMappings.Add("MIKTAR", "MIKTAR");
             tableMapping.ColumnMappings.Add("BIRIM", "BIRIM");
             tableMapping.ColumnMappings.Add("UUID", "UUID");
-            tableMapping.ColumnMappings.Add("ACIKLAMA", "ACIKLAMA");
             tableMapping.ColumnMappings.Add("REF_NO", "REF_NO");
+            tableMapping.ColumnMappings.Add("ACIKLAMA", "ACIKLAMA");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -5405,13 +5405,13 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
 FROM            MalzemeDepo1 AS D1 WITH (nolock) INNER JOIN
                          MalzemeDepo2 AS d2 ON D1.ID = d2.REF_NO
 WHERE        (D1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (D1.ID =
-                             (SELECT     top 1   MAX(X.ID)
+                             (SELECT MAX(X.ID)
                                FROM            MalzemeDepo1 AS X WITH (NOLOCK) INNER JOIN
                                                          MalzemeDepo2 AS Y ON X.ID = Y.REF_NO WHERE X.ISLEM_CINSI = 'SARF_MALZEME_GIRIS'))";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        d2.REF_NO, d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID
+            this._commandCollection[1].CommandText = @"SELECT        d2.REF_NO, d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID,d2.ACIKLAMA
 FROM            MalzemeDepo1 AS d1 WITH (nolock) INNER JOIN
                          MalzemeDepo2 AS d2 ON d1.ID = d2.REF_NO
 WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
@@ -5423,7 +5423,7 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        d2.REF_NO,d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID
+            this._commandCollection[2].CommandText = @"SELECT        d2.REF_NO,d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID,d2.ACIKLAMA
 FROM            MalzemeDepo1 AS d1 WITH (nolock) INNER JOIN
                          MalzemeDepo2 AS d2 ON d1.ID = d2.REF_NO
 WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
@@ -5663,7 +5663,7 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
                                  WHERE        (X.ISLEM_CINSI = 'SARF_MALZEME_CIKIS') AND (Y.NOT1 NOT IN ('DOLUM/TAMİR İÇİN SEVK')) AND (Y.UUID = d2.UUID)), 0) AS MIKTAR, d2.BIRIM, d2.UUID
 FROM            MalzemeDepo1 AS d1 INNER JOIN
                          MalzemeDepo2 AS d2 ON d1.ID = d2.REF_NO
-						 WHERE D1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS'
+WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d2.MALZEME_KODU <> 'TD-01')
 GROUP BY d2.MALZEME_KODU, d2.MALZEME_ADI, d2.BIRIM, d2.UUID
 HAVING        (SUM(d2.MIKTAR) - ISNULL
                              ((SELECT        SUM(Y.MIKTAR) AS Expr1

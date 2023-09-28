@@ -33,7 +33,7 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                 if (bildirim.onayAl("Silmek istiyor musunuz?\nBu işlem geri alınamaz!", "Uyarı"))
                     {
                         d1.DepodanSil(int.Parse(lblKayitNo.Text));
-                        sonKaydiListele();
+                        sonKaydiListele("son");
                     }
             }
         }
@@ -52,16 +52,16 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                     {
                         islem_cinsi = row.Cells[0].Value.ToString();
                     }
-                    /*
-                     INSERT INTO MalzemeDepo2
-                         (KALEM_ISLEM, MALZEME_KODU, MALZEME_ADI, MIKTAR, BIRIM, UUID, REF_NO, ACIKLAMA)
-VALUES        (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8)
-                     
-                     */
                     if (!row.IsNewRow &&
                         row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null &&
-                        row.Cells[5].Value != null && row.Cells[6].Value != null)
+                        row.Cells[7].Value != null && row.Cells[6].Value != null)
                     {
+                        /*
+                         INSERT INTO MalzemeDepo2
+                         (KALEM_ISLEM, MALZEME_KODU, MALZEME_ADI, MIKTAR, BIRIM, UUID, REF_NO, ACIKLAMA)
+VALUES        (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8)
+                         * 
+                         */
                         d1.Depo2Kaydet(
                             islem_cinsi,
                             row.Cells[1].Value.ToString(),
@@ -69,7 +69,6 @@ VALUES        (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8)
                             int.Parse(row.Cells[3].Value.ToString()),
                             row.Cells[4].Value.ToString(),
                             row.Cells[6].Value.ToString(),
-                            //row.Cells[5].Value.ToString(),
                             kayitNo,
                             row.Cells[7].Value.ToString());
                     }
@@ -93,14 +92,15 @@ VALUES        (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8)
                         row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null &&
                         row.Cells[5].Value != null && row.Cells[6].Value != null)
                     {
-                        d1.Depo2Guncelle(
+                        d1.Depo2Guncelle( //UPDATE MalzemeDepo2 SET KALEM_ISLEM = @P1,MALZEME_KODU=@P2,MALZEME_ADI=@P3,MIKTAR=@P4,BIRIM=@P5,ACIKLAMA=@P6 WHERE UUID = @P7
                             kalem_islem,
                             row.Cells[1].Value.ToString(),
                             row.Cells[2].Value.ToString(),
                             int.Parse(row.Cells[3].Value.ToString()),
                             row.Cells[4].Value.ToString(),
-                            row.Cells[5].Value.ToString(),
+                            row.Cells[7].Value.ToString(),
                             row.Cells[6].Value.ToString());
+
                     }
                 }
                 bildirim.Basarili("Güncelleme işlemi başarılı", "Bilgi");
@@ -125,82 +125,90 @@ VALUES        (@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8)
             }
         }
 
-        private void sonKaydiListele() {
+        DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter kayitGetir = new DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter();
+        private void sonKaydiListele(string geriMiIleriMiSonKayitMi)
+        {
             btnMalzemeDepoSil.Enabled = true;
-            DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter kayitGetir = new DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter();
+            //son kayit icin 
             DataSet1.MalzemeDepoKayitGetirDataTable sonKayitlar = kayitGetir.MalzemeDepoGirisSonKayit();
+            //onceki kayit icin 
+            DataSet1.MalzemeDepoKayitGetirDataTable oncekiKayit = kayitGetir.MalzemeDepoGirisOncekiKayit(int.Parse(lblKayitNo.Text));
+            //sonraki kayit icin
+            DataSet1.MalzemeDepoKayitGetirDataTable sonrakiKayit = kayitGetir.MalzemeDepoSonrakiKayit(int.Parse(lblKayitNo.Text));
 
-            if (sonKayitlar.Rows.Count > 0)
-            {
-                DataSet1.MalzemeDepoKayitGetirRow ilkSatir = sonKayitlar[0];
-                DateTime ilkKayitTarih = ilkSatir.TARIH;
-                dtpTarih.Text = ilkKayitTarih.ToString();
-                txtFirmaKodu.Text = ilkSatir.FIRMA_KODU.ToString();
-                txtFirmaUnvan.Text = ilkSatir.FIRMA_UNVAN.ToString();
-                txtBelgeNo.Text = ilkSatir.BELGE_NO.ToString();
-                lblKayitNo.Text = ilkSatir.REF_NO.ToString();
-                malzemeGirisKalemler.Rows.Clear(); // tekrar tıklanınca alt alta eklememesi için
-                foreach (DataSet1.MalzemeDepoKayitGetirRow satir in sonKayitlar)
+
+            if(geriMiIleriMiSonKayitMi == "sonKayit"){
+                if (sonKayitlar != null)
                 {
-                    malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, satir.ACIKLAMA);
+                    DateTime kayitTarih = sonKayitlar[0].TARIH;
+                    dtpTarih.Text = kayitTarih.ToString();
+                    txtFirmaKodu.Text = sonKayitlar[0].FIRMA_KODU;
+                    txtFirmaUnvan.Text = sonKayitlar[0].FIRMA_UNVAN;
+                    txtBelgeNo.Text = sonKayitlar[0].BELGE_NO;
+                    lblKayitNo.Text = sonKayitlar[0].REF_NO.ToString();
+                    malzemeGirisKalemler.Rows.Clear();
+                    foreach (var satir in sonKayitlar)
+                    {
+                        malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, satir.ACIKLAMA);
+                    }
+                }
+                else {
+                    bildirim.Basarisiz("Gösterilecek başka kayıt kalmadı!", "Uyarı");
+                }
+            }else if (geriMiIleriMiSonKayitMi == "oncekiKayit"){
+                if (oncekiKayit != null && oncekiKayit.Rows.Count > 0)
+                {
+                    DateTime kayitTarih = oncekiKayit[0].TARIH;
+                    dtpTarih.Text = kayitTarih.ToString();
+                    txtFirmaKodu.Text = oncekiKayit[0].FIRMA_KODU;
+                    txtFirmaUnvan.Text = oncekiKayit[0].FIRMA_UNVAN;
+                    txtBelgeNo.Text = oncekiKayit[0].BELGE_NO;
+                    lblKayitNo.Text = oncekiKayit[0].REF_NO.ToString();
+                    malzemeGirisKalemler.Rows.Clear();
+                    foreach (var satir in oncekiKayit)
+                    {
+                        malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, satir.ACIKLAMA);
+                    }
+                }
+                else
+                {
+                    bildirim.Basarisiz("Gösterilecek başka kayıt kalmadı!", "Uyarı");
+                }
+            }else if(geriMiIleriMiSonKayitMi == "sonrakiKayit"){
+                if (sonrakiKayit != null && sonrakiKayit.Rows.Count >0 ) {
+                    DateTime kayitTarih = sonrakiKayit[0].TARIH;
+                    dtpTarih.Text = kayitTarih.ToString();
+                    txtFirmaKodu.Text = sonrakiKayit[0].FIRMA_KODU;
+                    txtFirmaUnvan.Text = sonrakiKayit[0].FIRMA_UNVAN;
+                    txtBelgeNo.Text = sonrakiKayit[0].BELGE_NO;
+                    lblKayitNo.Text = sonrakiKayit[0].REF_NO.ToString();
+                    malzemeGirisKalemler.Rows.Clear();
+                    foreach (var satir in sonrakiKayit)
+                    {
+                        malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, satir.ACIKLAMA);
+                    }
+                }
+                else
+                {
+                    bildirim.Basarisiz("Gösterilecek başka kayıt kalmadı!", "Uyarı");
                 }
             }
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            sonKaydiListele();            
+            sonKaydiListele("sonKayit");            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       private void button1_Click(object sender, EventArgs e)
         {
-            DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter kayitGetir = new DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter();
-            DataSet1.MalzemeDepoKayitGetirDataTable sonKayitlar = kayitGetir.MalzemeDepoGirisOncekiKayit(int.Parse(lblKayitNo.Text));
-            if (sonKayitlar.Rows.Count > 0)
-            {
-                DataSet1.MalzemeDepoKayitGetirRow ilkSatir = sonKayitlar[0];
-                DateTime ilkKayitTarih = ilkSatir.TARIH;
-                dtpTarih.Text = ilkKayitTarih.ToString();
-                txtFirmaKodu.Text = ilkSatir.FIRMA_KODU.ToString();
-                txtFirmaUnvan.Text = ilkSatir.FIRMA_UNVAN.ToString();
-                txtBelgeNo.Text = ilkSatir.BELGE_NO.ToString();
-                lblKayitNo.Text = ilkSatir.REF_NO.ToString();
-                malzemeGirisKalemler.Rows.Clear(); // tekrar tıklanınca alt alta eklememesi için
-                foreach (DataSet1.MalzemeDepoKayitGetirRow satir in sonKayitlar)
-                {
-                    malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, satir.ACIKLAMA);
-                }
-            }
-            else {
-                Utils.BildirimGoster bildirim = new Utils.BildirimGoster();
-                bildirim.Basarisiz("Gösterilecek başka kayıt kalmadı","Uyarı");
-            }
+            sonKaydiListele("oncekiKayit");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+      private void button2_Click(object sender, EventArgs e)
         {
-            DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter kayitGetir = new DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter();
-            DataSet1.MalzemeDepoKayitGetirDataTable sonKayitlar = kayitGetir.MalzemeDepoSonrakiKayit(int.Parse(lblKayitNo.Text));
-            if (sonKayitlar.Rows.Count > 0)
-            {
-                DataSet1.MalzemeDepoKayitGetirRow ilkSatir = sonKayitlar[0];
-                DateTime ilkKayitTarih = ilkSatir.TARIH;
-                dtpTarih.Text = ilkKayitTarih.ToString();
-                txtFirmaKodu.Text = ilkSatir.FIRMA_KODU.ToString();
-                txtFirmaUnvan.Text = ilkSatir.FIRMA_UNVAN.ToString();
-                txtBelgeNo.Text = ilkSatir.BELGE_NO.ToString();
-                lblKayitNo.Text = ilkSatir.REF_NO.ToString();
-                malzemeGirisKalemler.Rows.Clear(); // tekrar tıklanınca alt alta eklememesi için
-                foreach (DataSet1.MalzemeDepoKayitGetirRow satir in sonKayitlar)
-                {
-                    malzemeGirisKalemler.Rows.Add(satir.KALEM_ISLEM, satir.MALZEME_KODU, satir.MALZEME_ADI, satir.MIKTAR, satir.BIRIM, "", satir.UUID, "");
-                }
-            }
-            else
-            {
-                Utils.BildirimGoster bildirim = new Utils.BildirimGoster();
-                bildirim.Basarisiz("Gösterilecek başka kayıt kalmadı", "Uyarı");
-            }
+            sonKaydiListele("sonrakiKayit");
         }
 
         private void btnFirmaKartiYeni_Click(object sender, EventArgs e)
