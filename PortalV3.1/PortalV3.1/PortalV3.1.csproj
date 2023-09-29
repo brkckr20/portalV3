@@ -109,6 +109,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaporDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RaporDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Formlar\GuvenBilgisayarHizmetRaporu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,7 +156,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Raporlar\Formlar\Guven.rdlc" />
+    <EmbeddedResource Include="Raporlar\Formlar\GuvenBilgisayar.rdlc" />
     <EmbeddedResource Include="Raporlar\Formlar\GuvenBilgisayarHizmetRaporu.resx">
       <DependentUpon>GuvenBilgisayarHizmetRaporu.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +185,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="RaporDataSet.xsc">
+      <DependentUpon>RaporDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RaporDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RaporDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RaporDataSet.xss">
+      <DependentUpon>RaporDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\CloseIcon.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

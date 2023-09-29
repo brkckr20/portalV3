@@ -99,10 +99,76 @@ namespace PortalV3._1.Depolar.MalzemeDepo
             }
 
           }
+        DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter kayitGetir = new DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter();
+        private void kayitListele(string getirilecekKayit) {
+            DataSet1.MalzemeDepoKayitGetirDataTable sonKayit = kayitGetir.MalzemeDepoCikisSonKayit(); // son kayit
+            DataSet1.MalzemeDepoKayitGetirDataTable oncekiKayit = kayitGetir.MalzemeDepoCikisOncekiKayit(int.Parse(lblKayitNo.Text));
+
+            if (getirilecekKayit == "sonKayit")
+            {
+                if(sonKayit != null){
+                    lblKayitNo.Text = sonKayit[0].REF_NO.ToString();
+                    DateTime kayitTarih = sonKayit[0].TARIH;
+                    dtpTarih.Text = kayitTarih.ToString();
+                    txtFirmaKodu.Text = sonKayit[0].FIRMA_KODU;
+                    lblFirmaUnvanText.Text = sonKayit[0].FIRMA_UNVAN;
+                    tblMalzemeCikis.Rows.Clear();
+                    foreach(var satir in sonKayit){
+                        tblMalzemeCikis.Rows.Add(
+                            satir.KALEM_ISLEM,
+                            satir.MALZEME_KODU,
+                            satir.MALZEME_ADI,
+                            satir.MIKTAR,
+                            satir.BIRIM,
+                            "", //not1
+                            "", //not2,
+                            "", //cikilan birim
+                            "", // teslim alan
+                            satir.UUID
+                            );
+                    }
+                }
+                else
+                {
+                    bildirim.Basarisiz("Gösterilecek başka kayıt kalmadı!", "Uyarı");
+                }
+            }else if(getirilecekKayit == "oncekiKayit"){
+                if (oncekiKayit != null && oncekiKayit.Rows.Count > 0)
+                {
+                    lblKayitNo.Text = oncekiKayit[0].REF_NO.ToString();
+                    DateTime kayitTarih = oncekiKayit[0].TARIH;
+                    dtpTarih.Text = kayitTarih.ToString();
+                    txtFirmaKodu.Text = oncekiKayit[0].FIRMA_KODU;
+                    lblFirmaUnvanText.Text = oncekiKayit[0].FIRMA_UNVAN;
+                    tblMalzemeCikis.Rows.Clear();
+                    foreach (var satir in oncekiKayit)
+                    {
+                        tblMalzemeCikis.Rows.Add(
+                            satir.KALEM_ISLEM,
+                            satir.MALZEME_KODU,
+                            satir.MALZEME_ADI,
+                            satir.MIKTAR,
+                            satir.BIRIM,
+                            "", //not1
+                            "", //not2,
+                            "", //cikilan birim
+                            "", // teslim alan
+                            satir.UUID
+                            );
+                    }
+                }
+                else
+                {
+                    bildirim.Basarisiz("Gösterilecek başka kayıt kalmadı!", "Uyarı");
+                }
+                
+            }
+        }
+       //sonraki kayit yapilacak
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            kayitListele("sonKayit");
         }
 
         private void btnMalzemeDepoCikisYeni_Click(object sender, EventArgs e)
@@ -116,7 +182,7 @@ namespace PortalV3._1.Depolar.MalzemeDepo
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            kayitListele("oncekiKayit");
         }
      }
 }
