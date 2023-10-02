@@ -121,6 +121,7 @@
             this.button3.Text = "Güncelle";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -135,6 +136,7 @@
             this.button2.Text = "İleri";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -178,6 +180,7 @@
             this.btnMalzemeDepoSil.Text = "Sil";
             this.btnMalzemeDepoSil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMalzemeDepoSil.UseVisualStyleBackColor = true;
+            this.btnMalzemeDepoSil.Click += new System.EventHandler(this.btnMalzemeDepoSil_Click);
             // 
             // btnMalzemeDepoCikisKaydet
             // 

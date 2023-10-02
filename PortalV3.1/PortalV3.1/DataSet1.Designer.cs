@@ -5398,7 +5398,7 @@ SELECT ID, ISLEM_CINSI, TARIH, FIRMA_KODU, FIRMA_UNVAN, BELGE_NO FROM MalzemeDep
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        D1.TARIH, D1.FIRMA_KODU, D1.FIRMA_UNVAN, D1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID, d2.REF_NO,D2.ACIKLAMA
@@ -5435,7 +5435,20 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_CIKIS') AND (d1.ID =
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        d2.REF_NO, d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID,d2.ACIKLAMA
+            this._commandCollection[3].CommandText = @"SELECT        d2.REF_NO, d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID, d2.ACIKLAMA, d2.CIKILAN_BIRIM, d2.TESLIM_ALAN, 
+                         d2.NOT1, d2.NOT2
+FROM            MalzemeDepo1 AS d1 WITH (nolock) INNER JOIN
+                         MalzemeDepo2 AS d2 ON d1.ID = d2.REF_NO
+WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_CIKIS') AND (d1.ID =
+                             (SELECT        MIN(x.ID) AS Expr1
+                               FROM            MalzemeDepo1 AS x WITH (nolock) INNER JOIN
+                                                         MalzemeDepo2 AS y ON x.ID = y.REF_NO
+                               WHERE        (x.ISLEM_CINSI = 'SARF_MALZEME_CIKIS') AND (x.ID > @P1)))";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@P1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT        d2.REF_NO, d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID,d2.ACIKLAMA
 FROM            MalzemeDepo1 AS d1 WITH (nolock) INNER JOIN
                          MalzemeDepo2 AS d2 ON d1.ID = d2.REF_NO
 WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
@@ -5443,22 +5456,20 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
                                FROM            MalzemeDepo1 AS x WITH (nolock) INNER JOIN
                                                          MalzemeDepo2 AS y ON x.ID = y.REF_NO
                                WHERE        (x.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (x.ID < @p1)))";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        d2.REF_NO,d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID,d2.ACIKLAMA
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT        d2.REF_NO, d1.TARIH, d1.FIRMA_KODU, d1.FIRMA_UNVAN, d1.BELGE_NO, d2.KALEM_ISLEM, d2.MALZEME_KODU, d2.MALZEME_ADI, d2.MIKTAR, d2.BIRIM, d2.UUID, d2.ACIKLAMA
 FROM            MalzemeDepo1 AS d1 WITH (nolock) INNER JOIN
                          MalzemeDepo2 AS d2 ON d1.ID = d2.REF_NO
 WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
-                             (SELECT			min(x.ID) AS Expr1
+                             (SELECT        MIN(x.ID) AS Expr1
                                FROM            MalzemeDepo1 AS x WITH (nolock) INNER JOIN
                                                          MalzemeDepo2 AS y ON x.ID = y.REF_NO
-                               WHERE        (x.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (x.ID > @p1)))
-
-";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+                               WHERE        (x.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (x.ID > @p1)))";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5539,8 +5550,34 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillOnceki(DataSet1.MalzemeDepoKayitGetirDataTable dataTable, int p1) {
+        public virtual int FillBy2(DataSet1.MalzemeDepoKayitGetirDataTable dataTable, int P1) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(P1));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.MalzemeDepoKayitGetirDataTable MalzemeDepoCikisSonrakiKayit(int P1) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(P1));
+            DataSet1.MalzemeDepoKayitGetirDataTable dataTable = new DataSet1.MalzemeDepoKayitGetirDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillOnceki(DataSet1.MalzemeDepoKayitGetirDataTable dataTable, int p1) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(p1));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5554,7 +5591,7 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1.MalzemeDepoKayitGetirDataTable MalzemeDepoGirisOncekiKayit(int p1) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(p1));
             DataSet1.MalzemeDepoKayitGetirDataTable dataTable = new DataSet1.MalzemeDepoKayitGetirDataTable();
             this.Adapter.Fill(dataTable);
@@ -5566,7 +5603,7 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillSonraki(DataSet1.MalzemeDepoKayitGetirDataTable dataTable, int p1) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(p1));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5580,7 +5617,7 @@ WHERE        (d1.ISLEM_CINSI = 'SARF_MALZEME_GIRIS') AND (d1.ID =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1.MalzemeDepoKayitGetirDataTable MalzemeDepoSonrakiKayit(int p1) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(p1));
             DataSet1.MalzemeDepoKayitGetirDataTable dataTable = new DataSet1.MalzemeDepoKayitGetirDataTable();
             this.Adapter.Fill(dataTable);

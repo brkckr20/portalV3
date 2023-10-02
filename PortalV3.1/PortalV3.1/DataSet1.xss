@@ -8,8 +8,8 @@
   <Shapes>
     <Shape ID="DesignTable:SarfMalzemeKarti" ZOrder="6" X="-6" Y="-7" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:Cari" ZOrder="5" X="614" Y="1" Height="191" Width="238" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:MalzemeDepo1" ZOrder="2" X="306" Y="-6" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:MalzemeDepoKayitGetir" ZOrder="1" X="-5" Y="261" Height="381" Width="297" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:MalzemeDepo1" ZOrder="1" X="306" Y="-6" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:MalzemeDepoKayitGetir" ZOrder="2" X="-5" Y="261" Height="381" Width="297" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:MalzemeDepoStokDurum" ZOrder="4" X="875" Y="9" Height="172" Width="294" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:PersonelKarti" ZOrder="3" X="619" Y="219" Height="210" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="83" />
   </Shapes>

@@ -37,9 +37,9 @@
             this.malzemeDepoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.malzemeDepoGirişToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.malzemeDepoÇıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabMain = new System.Windows.Forms.TabControl();
             this.raporToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.güvenBilgisayarHizmetRaporuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabMain = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,15 +116,6 @@
             this.malzemeDepoÇıkışToolStripMenuItem.Text = "Malzeme Depo Çıkış";
             this.malzemeDepoÇıkışToolStripMenuItem.Click += new System.EventHandler(this.malzemeDepoÇıkışToolStripMenuItem_Click);
             // 
-            // tabMain
-            // 
-            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabMain.Location = new System.Drawing.Point(0, 24);
-            this.tabMain.Name = "tabMain";
-            this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(1272, 484);
-            this.tabMain.TabIndex = 1;
-            // 
             // raporToolStripMenuItem
             // 
             this.raporToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -141,6 +132,15 @@
             this.güvenBilgisayarHizmetRaporuToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.güvenBilgisayarHizmetRaporuToolStripMenuItem.Text = "Güven Bilgisayar Hizmet Raporu";
             this.güvenBilgisayarHizmetRaporuToolStripMenuItem.Click += new System.EventHandler(this.güvenBilgisayarHizmetRaporuToolStripMenuItem_Click);
+            // 
+            // tabMain
+            // 
+            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMain.Location = new System.Drawing.Point(0, 24);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            this.tabMain.Size = new System.Drawing.Size(1272, 484);
+            this.tabMain.TabIndex = 1;
             // 
             // Form1
             // 

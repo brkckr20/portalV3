@@ -16,3 +16,4 @@ E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Kartl
 E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3._1.Raporlar.Formlar.GuvenBilgisayarHizmetRaporu.resources
 E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\RdlCompile.cache
 E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\RdlCompile.compiled
+E:\Kodlama\PortalV3\PortalV3.1\PortalV3.1\PortalV3.1\obj\Debug\PortalV3.1.csprojResolveAssemblyReference.cache

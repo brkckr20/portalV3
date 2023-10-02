@@ -103,6 +103,7 @@ namespace PortalV3._1.Depolar.MalzemeDepo
         private void kayitListele(string getirilecekKayit) {
             DataSet1.MalzemeDepoKayitGetirDataTable sonKayit = kayitGetir.MalzemeDepoCikisSonKayit(); // son kayit
             DataSet1.MalzemeDepoKayitGetirDataTable oncekiKayit = kayitGetir.MalzemeDepoCikisOncekiKayit(int.Parse(lblKayitNo.Text));
+            DataSet1.MalzemeDepoKayitGetirDataTable sonrakiKayit = kayitGetir.MalzemeDepoCikisSonrakiKayit(int.Parse(lblKayitNo.Text));
 
             if (getirilecekKayit == "sonKayit")
             {
@@ -161,10 +162,39 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                 {
                     bildirim.Basarisiz("Gösterilecek başka kayıt kalmadı!", "Uyarı");
                 }
-                
+
+            }
+            else if (getirilecekKayit == "sonrakiKayit") {
+                if (sonrakiKayit != null && sonrakiKayit.Rows.Count > 0)
+                {
+                    lblKayitNo.Text = sonrakiKayit[0].REF_NO.ToString();
+                    DateTime kayitTarih = sonrakiKayit[0].TARIH;
+                    dtpTarih.Text = kayitTarih.ToString();
+                    txtFirmaKodu.Text = sonrakiKayit[0].FIRMA_KODU;
+                    lblFirmaUnvanText.Text = sonrakiKayit[0].FIRMA_UNVAN;
+                    tblMalzemeCikis.Rows.Clear();
+                    foreach (var satir in sonrakiKayit)
+                    {
+                        tblMalzemeCikis.Rows.Add(
+                            satir.KALEM_ISLEM,
+                            satir.MALZEME_KODU,
+                            satir.MALZEME_ADI,
+                            satir.MIKTAR,
+                            satir.BIRIM,
+                            "", //not1
+                            "", //not2,
+                            "", //cikilan birim
+                            "", // teslim alan
+                            satir.UUID
+                            );
+                    }
+                }
+                else {
+                    bildirim.Basarisiz("Gösterilecek başka kayıt kalmadı!", "Uyarı");
+                }
             }
         }
-       //sonraki kayit yapilacak
+       
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -183,6 +213,26 @@ namespace PortalV3._1.Depolar.MalzemeDepo
         private void button1_Click(object sender, EventArgs e)
         {
             kayitListele("oncekiKayit");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            kayitListele("sonrakiKayit");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            malzemeDepoDurumuGetir();
+        }
+
+        private void btnMalzemeDepoSil_Click(object sender, EventArgs e)
+        {
+            DataSet1TableAdapters.MalzemeDepo1TableAdapter malzemeDepo = new DataSet1TableAdapters.MalzemeDepo1TableAdapter();
+            if (bildirim.onayAl("Silmek istiyor musunuz?\nBu işlem geri alınamaz!", "Uyarı"))
+            {
+                malzemeDepo.DepodanSil(int.Parse(lblKayitNo.Text));
+                kayitListele("sonKayit");
+            }
         }
      }
 }
