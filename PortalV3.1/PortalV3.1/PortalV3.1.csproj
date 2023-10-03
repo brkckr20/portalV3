@@ -121,6 +121,7 @@
       <DependentUpon>GuvenBilgisayarHizmetRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\BildirimGoster.cs" />
+    <Compile Include="Utils\Filtrele.cs" />
     <Compile Include="Utils\SekmeyiKapat.cs" />
     <EmbeddedResource Include="Depolar\MalzemeDepo\MalzemeDepoCikis.resx">
       <DependentUpon>MalzemeDepoCikis.cs</DependentUpon>

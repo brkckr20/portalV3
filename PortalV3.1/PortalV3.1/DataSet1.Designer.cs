@@ -454,13 +454,13 @@ namespace PortalV3._1 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SarfMalzemeKartiDataTable : global::System.Data.TypedTableBase<SarfMalzemeKartiRow> {
             
-            private global::System.Data.DataColumn columnMalzeme_Kodu;
-            
             private global::System.Data.DataColumn columnMalzeme_Adı;
             
             private global::System.Data.DataColumn columnBirim;
             
             private global::System.Data.DataColumn columnMalzeme_Marka;
+            
+            private global::System.Data.DataColumn columnMALZEME_KODU;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -497,14 +497,6 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Malzeme_KoduColumn {
-                get {
-                    return this.columnMalzeme_Kodu;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn Malzeme_AdıColumn {
                 get {
                     return this.columnMalzeme_Adı;
@@ -524,6 +516,14 @@ namespace PortalV3._1 {
             public global::System.Data.DataColumn Malzeme_MarkaColumn {
                 get {
                     return this.columnMalzeme_Marka;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MALZEME_KODUColumn {
+                get {
+                    return this.columnMALZEME_KODU;
                 }
             }
             
@@ -564,13 +564,13 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SarfMalzemeKartiRow AddSarfMalzemeKartiRow(string Malzeme_Kodu, string Malzeme_Adı, string Birim, string Malzeme_Marka) {
+            public SarfMalzemeKartiRow AddSarfMalzemeKartiRow(string Malzeme_Adı, string Birim, string Malzeme_Marka, string MALZEME_KODU) {
                 SarfMalzemeKartiRow rowSarfMalzemeKartiRow = ((SarfMalzemeKartiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Malzeme_Kodu,
                         Malzeme_Adı,
                         Birim,
-                        Malzeme_Marka};
+                        Malzeme_Marka,
+                        MALZEME_KODU};
                 rowSarfMalzemeKartiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSarfMalzemeKartiRow);
                 return rowSarfMalzemeKartiRow;
@@ -593,27 +593,27 @@ namespace PortalV3._1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnMalzeme_Kodu = base.Columns["Malzeme Kodu"];
                 this.columnMalzeme_Adı = base.Columns["Malzeme Adı"];
                 this.columnBirim = base.Columns["Birim"];
                 this.columnMalzeme_Marka = base.Columns["Malzeme Marka"];
+                this.columnMALZEME_KODU = base.Columns["MALZEME_KODU"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnMalzeme_Kodu = new global::System.Data.DataColumn("Malzeme Kodu", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMalzeme_Kodu);
                 this.columnMalzeme_Adı = new global::System.Data.DataColumn("Malzeme Adı", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMalzeme_Adı);
                 this.columnBirim = new global::System.Data.DataColumn("Birim", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBirim);
                 this.columnMalzeme_Marka = new global::System.Data.DataColumn("Malzeme Marka", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMalzeme_Marka);
-                this.columnMalzeme_Kodu.MaxLength = 50;
+                this.columnMALZEME_KODU = new global::System.Data.DataColumn("MALZEME_KODU", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMALZEME_KODU);
                 this.columnMalzeme_Adı.MaxLength = 50;
                 this.columnBirim.MaxLength = 10;
                 this.columnMalzeme_Marka.MaxLength = 20;
+                this.columnMALZEME_KODU.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2389,22 +2389,6 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Malzeme_Kodu {
-                get {
-                    try {
-                        return ((string)(this[this.tableSarfMalzemeKarti.Malzeme_KoduColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Malzeme Kodu\' in table \'SarfMalzemeKarti\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSarfMalzemeKarti.Malzeme_KoduColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Malzeme_Adı {
                 get {
                     try {
@@ -2453,14 +2437,18 @@ namespace PortalV3._1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMalzeme_KoduNull() {
-                return this.IsNull(this.tableSarfMalzemeKarti.Malzeme_KoduColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMalzeme_KoduNull() {
-                this[this.tableSarfMalzemeKarti.Malzeme_KoduColumn] = global::System.Convert.DBNull;
+            public string MALZEME_KODU {
+                get {
+                    try {
+                        return ((string)(this[this.tableSarfMalzemeKarti.MALZEME_KODUColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MALZEME_KODU\' in table \'SarfMalzemeKarti\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSarfMalzemeKarti.MALZEME_KODUColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2497,6 +2485,18 @@ namespace PortalV3._1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMalzeme_MarkaNull() {
                 this[this.tableSarfMalzemeKarti.Malzeme_MarkaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMALZEME_KODUNull() {
+                return this.IsNull(this.tableSarfMalzemeKarti.MALZEME_KODUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMALZEME_KODUNull() {
+                this[this.tableSarfMalzemeKarti.MALZEME_KODUColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3693,17 +3693,17 @@ namespace PortalV3._1.DataSet1TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SarfMalzemeKarti";
-            tableMapping.ColumnMappings.Add("Malzeme Kodu", "Malzeme Kodu");
             tableMapping.ColumnMappings.Add("Malzeme Adı", "Malzeme Adı");
             tableMapping.ColumnMappings.Add("Birim", "Birim");
             tableMapping.ColumnMappings.Add("Malzeme Marka", "Malzeme Marka");
+            tableMapping.ColumnMappings.Add("MALZEME_KODU", "MALZEME_KODU");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [SarfMalzemeKarti] ([MALZEME_KODU], [MALZEME_ADI], [BIRIM], [MALZEME_" +
-                "MARKA]) VALUES (@Malzeme_Kodu, @Malzeme_Adı, @Birim, @Malzeme_Marka)";
+                "MARKA]) VALUES (@MALZEME_KODU, @Malzeme_Adı, @Birim, @Malzeme_Marka)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Malzeme_Kodu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Malzeme Kodu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MALZEME_KODU", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MALZEME_KODU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Malzeme_Adı", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Malzeme Adı", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birim", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birim", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Malzeme_Marka", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Malzeme Marka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3722,9 +3722,9 @@ namespace PortalV3._1.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        SarfMalzemeKarti.MALZEME_KODU as \'Malzeme Kodu\',\r\nSarfMalzemeKarti." +
-                "MALZEME_ADI as \'Malzeme Adı\',\r\nSarfMalzemeKarti.BIRIM as \'Birim\',\r\nSarfMalzemeKa" +
-                "rti.MALZEME_MARKA as \'Malzeme Marka\'\r\nFROM            SarfMalzemeKarti";
+            this._commandCollection[0].CommandText = "SELECT        SarfMalzemeKarti.MALZEME_KODU,\r\nSarfMalzemeKarti.MALZEME_ADI as \'Ma" +
+                "lzeme Adı\',\r\nSarfMalzemeKarti.BIRIM as \'Birim\',\r\nSarfMalzemeKarti.MALZEME_MARKA " +
+                "as \'Malzeme Marka\'\r\nFROM            SarfMalzemeKarti";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -3808,12 +3808,12 @@ namespace PortalV3._1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Malzeme_Kodu, string Malzeme_Adı, string Birim, string Malzeme_Marka) {
-            if ((Malzeme_Kodu == null)) {
-                throw new global::System.ArgumentNullException("Malzeme_Kodu");
+        public virtual int Insert(string MALZEME_KODU, string Malzeme_Adı, string Birim, string Malzeme_Marka) {
+            if ((MALZEME_KODU == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Malzeme_Kodu));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(MALZEME_KODU));
             }
             if ((Malzeme_Adı == null)) {
                 throw new global::System.ArgumentNullException("Malzeme_Adı");
