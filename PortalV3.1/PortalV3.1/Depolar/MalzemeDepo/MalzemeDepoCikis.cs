@@ -19,7 +19,7 @@ namespace PortalV3._1.Depolar.MalzemeDepo
 
         DataSet1TableAdapters.MalzemeDepo1TableAdapter d1 = new DataSet1TableAdapters.MalzemeDepo1TableAdapter();
         Utils.BildirimGoster bildirim = new Utils.BildirimGoster();
-
+        DataSet1TableAdapters.SarfMalzemeKartiTableAdapter ds = new DataSet1TableAdapters.SarfMalzemeKartiTableAdapter();
         private void button4_Click(object sender, EventArgs e)
         {
             Modals.FirmaListesi fl = new Modals.FirmaListesi();
@@ -31,6 +31,7 @@ namespace PortalV3._1.Depolar.MalzemeDepo
         private void MalzemeDepoCikis_Load(object sender, EventArgs e)
         {
             malzemeDepoDurumuGetir();
+            tblMalzemeKartiListesi.DataSource = ds.GetData();
         }
 
         public void malzemeDepoDurumuGetir() {
@@ -232,6 +233,23 @@ namespace PortalV3._1.Depolar.MalzemeDepo
             {
                 malzemeDepo.DepodanSil(int.Parse(lblKayitNo.Text));
                 kayitListele("sonKayit");
+            }
+        }
+
+        private void tblMalzemeKartiListesi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Guid yeniUuid = Guid.NewGuid();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = tblMalzemeKartiListesi.Rows[e.RowIndex];
+                if (tblMalzemeCikis.Rows.Count > 0)
+                {
+                    tblMalzemeCikis.Rows[0].Cells[1].Value = selectedRow.Cells[3].Value.ToString(); //malzeme kodu
+                    tblMalzemeCikis.Rows[0].Cells[2].Value = selectedRow.Cells[0].Value.ToString(); // malzeme adı
+                    tblMalzemeCikis.Rows[0].Cells[4].Value = selectedRow.Cells[1].Value.ToString();
+                    tblMalzemeCikis.Rows[0].Cells[5].Value = "DOLUM/TAMİR"; // uuid değerini aktarma işlemi
+                    tblMalzemeCikis.Rows[0].Cells[9].Value = yeniUuid.ToString(); // uuid değerini aktarma işlemi
+                }
             }
         }
      }
