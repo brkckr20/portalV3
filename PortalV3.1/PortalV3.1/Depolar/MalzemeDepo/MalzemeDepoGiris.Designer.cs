@@ -39,6 +39,7 @@
             this.btnFirmaKartiKaydet = new System.Windows.Forms.Button();
             this.btnFirmaKartiYeni = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblKayitNo = new System.Windows.Forms.Label();
             this.txtBelgeNo = new System.Windows.Forms.TextBox();
@@ -65,7 +66,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.dataSet11 = new PortalV3._1.DataSet1();
-            this.button6 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tblTamirDolumBekleyenler = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -73,6 +77,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.malzemeGirisKalemler)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblTamirDolumBekleyenler)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,7 +97,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1118, 64);
+            this.panel1.Size = new System.Drawing.Size(1147, 64);
             this.panel1.TabIndex = 2;
             // 
             // button5
@@ -228,10 +236,20 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1118, 157);
+            this.groupBox1.Size = new System.Drawing.Size(1147, 157);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fiş";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(341, 76);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(37, 20);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Seç";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label6
             // 
@@ -343,7 +361,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 221);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1118, 287);
+            this.groupBox2.Size = new System.Drawing.Size(1147, 287);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kalemler";
@@ -447,21 +465,54 @@
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button6
+            // groupBox3
             // 
-            this.button6.Location = new System.Drawing.Point(341, 76);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(37, 20);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Seç";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.groupBox3.Controls.Add(this.tabControl1);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 508);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1147, 231);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Havuz";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(3, 16);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1141, 212);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.tblTamirDolumBekleyenler);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1133, 186);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Tamir/Dolum Bekleyen";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tblTamirDolumBekleyenler
+            // 
+            this.tblTamirDolumBekleyenler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblTamirDolumBekleyenler.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblTamirDolumBekleyenler.Location = new System.Drawing.Point(3, 3);
+            this.tblTamirDolumBekleyenler.Name = "tblTamirDolumBekleyenler";
+            this.tblTamirDolumBekleyenler.Size = new System.Drawing.Size(1127, 180);
+            this.tblTamirDolumBekleyenler.TabIndex = 0;
+            this.tblTamirDolumBekleyenler.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblTamirDolumBekleyenler_CellDoubleClick);
             // 
             // MalzemeDepoGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 592);
+            this.ClientSize = new System.Drawing.Size(1147, 739);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -476,6 +527,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.malzemeGirisKalemler)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tblTamirDolumBekleyenler)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -519,5 +574,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblKayitNo;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView tblTamirDolumBekleyenler;
     }
 }

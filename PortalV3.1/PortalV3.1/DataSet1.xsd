@@ -561,6 +561,54 @@ WHERE        (ID = @P3)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TamirDolumTableAdapter" GeneratorDataComponentClassName="TamirDolumTableAdapter" Name="TamirDolum" UserDataComponentName="TamirDolumTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PORTALConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="MalzemeDepoTamirDolumBekleyenler" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="MalzemeDepoTamirDolumBekleyenler" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="MalzemeDepoTamirDolumBekleyenler" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+    TARIH,
+    FIRMA_UNVAN,
+    KALEM_ISLEM,
+    MALZEME_KODU,
+    MALZEME_ADI,
+    BIRIM,
+    SUM(MIKTAR) - ISNULL(
+        (
+            SELECT SUM(MIKTAR)
+            FROM MalzemeDepo1 x
+            INNER JOIN MalzemeDepo2 y ON x.ID = y.REF_NO
+            WHERE ISLEM_CINSI = 'SARF_MALZEME_GIRIS' AND y.UUID = d2.UUID
+        ), 0) AS kalan_miktar,
+    UUID
+FROM MalzemeDepo1 d1
+INNER JOIN MalzemeDepo2 d2 ON d1.ID = d2.REF_NO
+WHERE ISLEM_CINSI = 'SARF_MALZEME_CIKIS' AND d2.KALEM_ISLEM in ('DOLUMA ÇIKIŞ','TAMİRE ÇIKIŞ')
+GROUP BY TARIH, FIRMA_UNVAN, KALEM_ISLEM, MALZEME_KODU, MALZEME_ADI, BIRIM, UUID
+HAVING (SUM(MIKTAR) - ISNULL(
+        (
+            SELECT SUM(MIKTAR)
+            FROM MalzemeDepo1 x
+            INNER JOIN MalzemeDepo2 y ON x.ID= y.REF_NO
+            WHERE ISLEM_CINSI = 'SARF_MALZEME_GIRIS' AND y.UUID = d2.UUID
+        ), 0)) &lt;&gt; 0;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TARIH" DataSetColumn="TARIH" />
+              <Mapping SourceColumn="FIRMA_UNVAN" DataSetColumn="FIRMA_UNVAN" />
+              <Mapping SourceColumn="KALEM_ISLEM" DataSetColumn="KALEM_ISLEM" />
+              <Mapping SourceColumn="MALZEME_KODU" DataSetColumn="MALZEME_KODU" />
+              <Mapping SourceColumn="MALZEME_ADI" DataSetColumn="MALZEME_ADI" />
+              <Mapping SourceColumn="BIRIM" DataSetColumn="BIRIM" />
+              <Mapping SourceColumn="kalan_miktar" DataSetColumn="kalan_miktar" />
+              <Mapping SourceColumn="UUID" DataSetColumn="UUID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -569,7 +617,7 @@ WHERE        (ID = @P3)</CommandText>
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SarfMalzemeKarti" msprop:Generator_TableClassName="SarfMalzemeKartiDataTable" msprop:Generator_TableVarName="tableSarfMalzemeKarti" msprop:Generator_RowChangedName="SarfMalzemeKartiRowChanged" msprop:Generator_TablePropName="SarfMalzemeKarti" msprop:Generator_RowDeletingName="SarfMalzemeKartiRowDeleting" msprop:Generator_RowChangingName="SarfMalzemeKartiRowChanging" msprop:Generator_RowEvHandlerName="SarfMalzemeKartiRowChangeEventHandler" msprop:Generator_RowDeletedName="SarfMalzemeKartiRowDeleted" msprop:Generator_RowClassName="SarfMalzemeKartiRow" msprop:Generator_UserTableName="SarfMalzemeKarti" msprop:Generator_RowEvArgName="SarfMalzemeKartiRowChangeEvent">
+        <xs:element name="SarfMalzemeKarti" msprop:Generator_TableClassName="SarfMalzemeKartiDataTable" msprop:Generator_TableVarName="tableSarfMalzemeKarti" msprop:Generator_TablePropName="SarfMalzemeKarti" msprop:Generator_RowDeletingName="SarfMalzemeKartiRowDeleting" msprop:Generator_RowChangingName="SarfMalzemeKartiRowChanging" msprop:Generator_RowEvHandlerName="SarfMalzemeKartiRowChangeEventHandler" msprop:Generator_RowDeletedName="SarfMalzemeKartiRowDeleted" msprop:Generator_UserTableName="SarfMalzemeKarti" msprop:Generator_RowChangedName="SarfMalzemeKartiRowChanged" msprop:Generator_RowEvArgName="SarfMalzemeKartiRowChangeEvent" msprop:Generator_RowClassName="SarfMalzemeKartiRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Malzeme_x0020_Adı" msprop:Generator_ColumnVarNameInTable="columnMalzeme_Adı" msprop:Generator_ColumnPropNameInRow="Malzeme_Adı" msprop:Generator_ColumnPropNameInTable="Malzeme_AdıColumn" msprop:Generator_UserColumnName="Malzeme Adı" minOccurs="0">
@@ -603,7 +651,7 @@ WHERE        (ID = @P3)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cari" msprop:Generator_TableClassName="CariDataTable" msprop:Generator_TableVarName="tableCari" msprop:Generator_RowChangedName="CariRowChanged" msprop:Generator_TablePropName="Cari" msprop:Generator_RowDeletingName="CariRowDeleting" msprop:Generator_RowChangingName="CariRowChanging" msprop:Generator_RowEvHandlerName="CariRowChangeEventHandler" msprop:Generator_RowDeletedName="CariRowDeleted" msprop:Generator_RowClassName="CariRow" msprop:Generator_UserTableName="Cari" msprop:Generator_RowEvArgName="CariRowChangeEvent">
+        <xs:element name="Cari" msprop:Generator_TableClassName="CariDataTable" msprop:Generator_TableVarName="tableCari" msprop:Generator_TablePropName="Cari" msprop:Generator_RowDeletingName="CariRowDeleting" msprop:Generator_RowChangingName="CariRowChanging" msprop:Generator_RowEvHandlerName="CariRowChangeEventHandler" msprop:Generator_RowDeletedName="CariRowDeleted" msprop:Generator_UserTableName="Cari" msprop:Generator_RowChangedName="CariRowChanged" msprop:Generator_RowEvArgName="CariRowChangeEvent" msprop:Generator_RowClassName="CariRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -631,7 +679,7 @@ WHERE        (ID = @P3)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MalzemeDepo1" msprop:Generator_TableClassName="MalzemeDepo1DataTable" msprop:Generator_TableVarName="tableMalzemeDepo1" msprop:Generator_TablePropName="MalzemeDepo1" msprop:Generator_RowDeletingName="MalzemeDepo1RowDeleting" msprop:Generator_RowChangingName="MalzemeDepo1RowChanging" msprop:Generator_RowEvHandlerName="MalzemeDepo1RowChangeEventHandler" msprop:Generator_RowDeletedName="MalzemeDepo1RowDeleted" msprop:Generator_UserTableName="MalzemeDepo1" msprop:Generator_RowChangedName="MalzemeDepo1RowChanged" msprop:Generator_RowEvArgName="MalzemeDepo1RowChangeEvent" msprop:Generator_RowClassName="MalzemeDepo1Row">
+        <xs:element name="MalzemeDepo1" msprop:Generator_TableClassName="MalzemeDepo1DataTable" msprop:Generator_TableVarName="tableMalzemeDepo1" msprop:Generator_RowChangedName="MalzemeDepo1RowChanged" msprop:Generator_TablePropName="MalzemeDepo1" msprop:Generator_RowDeletingName="MalzemeDepo1RowDeleting" msprop:Generator_RowChangingName="MalzemeDepo1RowChanging" msprop:Generator_RowEvHandlerName="MalzemeDepo1RowChangeEventHandler" msprop:Generator_RowDeletedName="MalzemeDepo1RowDeleted" msprop:Generator_RowClassName="MalzemeDepo1Row" msprop:Generator_UserTableName="MalzemeDepo1" msprop:Generator_RowEvArgName="MalzemeDepo1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -667,7 +715,7 @@ WHERE        (ID = @P3)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MalzemeDepoKayitGetir" msprop:Generator_TableClassName="MalzemeDepoKayitGetirDataTable" msprop:Generator_TableVarName="tableMalzemeDepoKayitGetir" msprop:Generator_TablePropName="MalzemeDepoKayitGetir" msprop:Generator_RowDeletingName="MalzemeDepoKayitGetirRowDeleting" msprop:Generator_RowChangingName="MalzemeDepoKayitGetirRowChanging" msprop:Generator_RowEvHandlerName="MalzemeDepoKayitGetirRowChangeEventHandler" msprop:Generator_RowDeletedName="MalzemeDepoKayitGetirRowDeleted" msprop:Generator_UserTableName="MalzemeDepoKayitGetir" msprop:Generator_RowChangedName="MalzemeDepoKayitGetirRowChanged" msprop:Generator_RowEvArgName="MalzemeDepoKayitGetirRowChangeEvent" msprop:Generator_RowClassName="MalzemeDepoKayitGetirRow">
+        <xs:element name="MalzemeDepoKayitGetir" msprop:Generator_TableClassName="MalzemeDepoKayitGetirDataTable" msprop:Generator_TableVarName="tableMalzemeDepoKayitGetir" msprop:Generator_RowChangedName="MalzemeDepoKayitGetirRowChanged" msprop:Generator_TablePropName="MalzemeDepoKayitGetir" msprop:Generator_RowDeletingName="MalzemeDepoKayitGetirRowDeleting" msprop:Generator_RowChangingName="MalzemeDepoKayitGetirRowChanging" msprop:Generator_RowEvHandlerName="MalzemeDepoKayitGetirRowChangeEventHandler" msprop:Generator_RowDeletedName="MalzemeDepoKayitGetirRowDeleted" msprop:Generator_RowClassName="MalzemeDepoKayitGetirRow" msprop:Generator_UserTableName="MalzemeDepoKayitGetir" msprop:Generator_RowEvArgName="MalzemeDepoKayitGetirRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TARIH" msprop:Generator_ColumnVarNameInTable="columnTARIH" msprop:Generator_ColumnPropNameInRow="TARIH" msprop:Generator_ColumnPropNameInTable="TARIHColumn" msprop:Generator_UserColumnName="TARIH" type="xs:dateTime" minOccurs="0" />
@@ -739,7 +787,7 @@ WHERE        (ID = @P3)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MalzemeDepoStokDurum" msprop:Generator_TableClassName="MalzemeDepoStokDurumDataTable" msprop:Generator_TableVarName="tableMalzemeDepoStokDurum" msprop:Generator_TablePropName="MalzemeDepoStokDurum" msprop:Generator_RowDeletingName="MalzemeDepoStokDurumRowDeleting" msprop:Generator_RowChangingName="MalzemeDepoStokDurumRowChanging" msprop:Generator_RowEvHandlerName="MalzemeDepoStokDurumRowChangeEventHandler" msprop:Generator_RowDeletedName="MalzemeDepoStokDurumRowDeleted" msprop:Generator_UserTableName="MalzemeDepoStokDurum" msprop:Generator_RowChangedName="MalzemeDepoStokDurumRowChanged" msprop:Generator_RowEvArgName="MalzemeDepoStokDurumRowChangeEvent" msprop:Generator_RowClassName="MalzemeDepoStokDurumRow">
+        <xs:element name="MalzemeDepoStokDurum" msprop:Generator_TableClassName="MalzemeDepoStokDurumDataTable" msprop:Generator_TableVarName="tableMalzemeDepoStokDurum" msprop:Generator_RowChangedName="MalzemeDepoStokDurumRowChanged" msprop:Generator_TablePropName="MalzemeDepoStokDurum" msprop:Generator_RowDeletingName="MalzemeDepoStokDurumRowDeleting" msprop:Generator_RowChangingName="MalzemeDepoStokDurumRowChanging" msprop:Generator_RowEvHandlerName="MalzemeDepoStokDurumRowChangeEventHandler" msprop:Generator_RowDeletedName="MalzemeDepoStokDurumRowDeleted" msprop:Generator_RowClassName="MalzemeDepoStokDurumRow" msprop:Generator_UserTableName="MalzemeDepoStokDurum" msprop:Generator_RowEvArgName="MalzemeDepoStokDurumRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MALZEME_KODU" msprop:Generator_ColumnVarNameInTable="columnMALZEME_KODU" msprop:Generator_ColumnPropNameInRow="MALZEME_KODU" msprop:Generator_ColumnPropNameInTable="MALZEME_KODUColumn" msprop:Generator_UserColumnName="MALZEME_KODU" minOccurs="0">
@@ -774,7 +822,7 @@ WHERE        (ID = @P3)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PersonelKarti" msprop:Generator_TableClassName="PersonelKartiDataTable" msprop:Generator_TableVarName="tablePersonelKarti" msprop:Generator_TablePropName="PersonelKarti" msprop:Generator_RowDeletingName="PersonelKartiRowDeleting" msprop:Generator_RowChangingName="PersonelKartiRowChanging" msprop:Generator_RowEvHandlerName="PersonelKartiRowChangeEventHandler" msprop:Generator_RowDeletedName="PersonelKartiRowDeleted" msprop:Generator_UserTableName="PersonelKarti" msprop:Generator_RowChangedName="PersonelKartiRowChanged" msprop:Generator_RowEvArgName="PersonelKartiRowChangeEvent" msprop:Generator_RowClassName="PersonelKartiRow">
+        <xs:element name="PersonelKarti" msprop:Generator_TableClassName="PersonelKartiDataTable" msprop:Generator_TableVarName="tablePersonelKarti" msprop:Generator_RowChangedName="PersonelKartiRowChanged" msprop:Generator_TablePropName="PersonelKarti" msprop:Generator_RowDeletingName="PersonelKartiRowDeleting" msprop:Generator_RowChangingName="PersonelKartiRowChanging" msprop:Generator_RowEvHandlerName="PersonelKartiRowChangeEventHandler" msprop:Generator_RowDeletedName="PersonelKartiRowDeleted" msprop:Generator_RowClassName="PersonelKartiRow" msprop:Generator_UserTableName="PersonelKarti" msprop:Generator_RowEvArgName="PersonelKartiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Kayıt_x0020_No" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnKayıt_No" msprop:Generator_ColumnPropNameInRow="Kayıt_No" msprop:Generator_ColumnPropNameInTable="Kayıt_NoColumn" msprop:Generator_UserColumnName="Kayıt No" type="xs:int" />
@@ -789,6 +837,56 @@ WHERE        (ID = @P3)</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TamirDolum" msprop:Generator_TableClassName="TamirDolumDataTable" msprop:Generator_TableVarName="tableTamirDolum" msprop:Generator_TablePropName="TamirDolum" msprop:Generator_RowDeletingName="TamirDolumRowDeleting" msprop:Generator_RowChangingName="TamirDolumRowChanging" msprop:Generator_RowEvHandlerName="TamirDolumRowChangeEventHandler" msprop:Generator_RowDeletedName="TamirDolumRowDeleted" msprop:Generator_UserTableName="TamirDolum" msprop:Generator_RowChangedName="TamirDolumRowChanged" msprop:Generator_RowEvArgName="TamirDolumRowChangeEvent" msprop:Generator_RowClassName="TamirDolumRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TARIH" msprop:Generator_ColumnVarNameInTable="columnTARIH" msprop:Generator_ColumnPropNameInRow="TARIH" msprop:Generator_ColumnPropNameInTable="TARIHColumn" msprop:Generator_UserColumnName="TARIH" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FIRMA_UNVAN" msprop:Generator_ColumnVarNameInTable="columnFIRMA_UNVAN" msprop:Generator_ColumnPropNameInRow="FIRMA_UNVAN" msprop:Generator_ColumnPropNameInTable="FIRMA_UNVANColumn" msprop:Generator_UserColumnName="FIRMA_UNVAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KALEM_ISLEM" msprop:Generator_ColumnVarNameInTable="columnKALEM_ISLEM" msprop:Generator_ColumnPropNameInRow="KALEM_ISLEM" msprop:Generator_ColumnPropNameInTable="KALEM_ISLEMColumn" msprop:Generator_UserColumnName="KALEM_ISLEM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MALZEME_KODU" msprop:Generator_ColumnVarNameInTable="columnMALZEME_KODU" msprop:Generator_ColumnPropNameInRow="MALZEME_KODU" msprop:Generator_ColumnPropNameInTable="MALZEME_KODUColumn" msprop:Generator_UserColumnName="MALZEME_KODU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MALZEME_ADI" msprop:Generator_ColumnVarNameInTable="columnMALZEME_ADI" msprop:Generator_ColumnPropNameInRow="MALZEME_ADI" msprop:Generator_ColumnPropNameInTable="MALZEME_ADIColumn" msprop:Generator_UserColumnName="MALZEME_ADI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BIRIM" msprop:Generator_ColumnVarNameInTable="columnBIRIM" msprop:Generator_ColumnPropNameInRow="BIRIM" msprop:Generator_ColumnPropNameInTable="BIRIMColumn" msprop:Generator_UserColumnName="BIRIM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kalan_miktar" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnkalan_miktar" msprop:Generator_ColumnPropNameInRow="kalan_miktar" msprop:Generator_ColumnPropNameInTable="kalan_miktarColumn" msprop:Generator_UserColumnName="kalan_miktar" type="xs:int" minOccurs="0" />
+              <xs:element name="UUID" msprop:Generator_ColumnVarNameInTable="columnUUID" msprop:Generator_ColumnPropNameInRow="UUID" msprop:Generator_ColumnPropNameInTable="UUIDColumn" msprop:Generator_UserColumnName="UUID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

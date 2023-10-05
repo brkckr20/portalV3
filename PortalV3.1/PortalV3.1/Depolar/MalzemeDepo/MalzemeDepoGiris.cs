@@ -51,11 +51,6 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                     if (row.Cells[0].Value != null && row.Cells[0].Value != DBNull.Value)
                     {
                         islem_cinsi = row.Cells[0].Value.ToString();
-                    }
-                    if (!row.IsNewRow &&
-                        row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null &&
-                        row.Cells[7].Value != null && row.Cells[6].Value != null)
-                    {
                         d1.Depo2Kaydet(
                             islem_cinsi,
                             row.Cells[1].Value.ToString(),
@@ -66,6 +61,22 @@ namespace PortalV3._1.Depolar.MalzemeDepo
                             kayitNo,
                             row.Cells[7].Value.ToString());
                     }
+                    /*if (!row.IsNewRow &&
+                        row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null &&
+                      // row.Cells[7].Value != null &&
+                    
+                    row.Cells[6].Value != null)
+                    {
+                        d1.Depo2Kaydet(
+                            islem_cinsi,
+                            row.Cells[1].Value.ToString(),
+                            row.Cells[2].Value.ToString(),
+                            int.Parse(row.Cells[3].Value.ToString()),
+                            row.Cells[4].Value.ToString(),
+                            row.Cells[6].Value.ToString(),
+                            kayitNo,
+                            row.Cells[7].Value.ToString());
+                    }*/
                 }
 
                 bildirim.Basarili("Kayıt işlemi başarılı", "Bilgi");
@@ -217,7 +228,9 @@ namespace PortalV3._1.Depolar.MalzemeDepo
 
         private void MalzemeDepoGiris_Load(object sender, EventArgs e)
         {
-
+            //DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter kayitGetir = new DataSet1TableAdapters.MalzemeDepoKayitGetirTableAdapter();
+            DataSet1TableAdapters.TamirDolumTableAdapter tdb = new DataSet1TableAdapters.TamirDolumTableAdapter();
+            tblTamirDolumBekleyenler.DataSource = tdb.MalzemeDepoTamirDolumBekleyenler();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -226,6 +239,19 @@ namespace PortalV3._1.Depolar.MalzemeDepo
             fl.ShowDialog();
             txtFirmaKodu.Text = fl.firmaKodu;
             txtFirmaUnvan.Text = fl.firmaUnvan;
+        }
+
+        private void tblTamirDolumBekleyenler_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) {
+                DataGridViewRow selectedRow = tblTamirDolumBekleyenler.Rows[e.RowIndex];
+                if (malzemeGirisKalemler.Rows.Count > 0) {
+                    malzemeGirisKalemler.Rows[0].Cells[1].Value = selectedRow.Cells[3].Value.ToString(); // malzemekodu
+                    malzemeGirisKalemler.Rows[0].Cells[2].Value = selectedRow.Cells[4].Value.ToString(); // malzemeadı
+                    malzemeGirisKalemler.Rows[0].Cells[4].Value = selectedRow.Cells[5].Value.ToString(); // birim
+                    malzemeGirisKalemler.Rows[0].Cells[6].Value = selectedRow.Cells[7].Value.ToString(); // uuid
+                }
+            }
         }
     }
 }
